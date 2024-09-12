@@ -1,2 +1,2 @@
-This is the GitHub repo for the https://foundationevents.com website.
-It advertises the upcoming events.
+This is the GitHub repo for https://foundationevent.com .
+It advertises the upcoming events for the floor.
