@@ -1,8 +1,18 @@
 /* General styles */
-body {
+body { 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center; /* Center-align text in the body */
+}
+
+/* Responsive Image */
+img {
+    width: 50%; /* Default width for desktop */
+    max-width: 600px; /* Maximum width for larger screens */
+    height: auto; margin: 20px auto; /* Center the image */
+    display: block; /* Ensure image is a block element */
+    border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 /* Headings */
@@ -14,19 +24,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive text sizes */
 h1 {
-    font-size: 6vw; /* Use viewport width units for responsiveness */
+    font-size: 8vw; /* Use viewport width units for responsiveness */
 }
 
 h2 {
-    font-size: 4vw;
+    font-size: 6vw;
 }
 
 h3 {
-    font-size: 3vw;
+    font-size: 4vw;
 }
 
 h4, h5, h6 {
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 /* Media queries for fine-tuning */
@@ -103,7 +113,7 @@ img {
         img {
             width: 100%; /* Make the image take up the full width of its container */
             height: auto; /* Maintain aspect ratio */
-            border-radius: 8px; /* Optional: Add rounded corners */
+            border-radius: 15px; /* Optional: Add rounded corners */
         }
 
         .label {
@@ -114,7 +124,7 @@ img {
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
             color: white;
             padding: 5px;
-            border-radius: 3px;
+            border-radius: 5px;
             font-size: 2vw; /* Adjust font size using viewport width units */
         }
     }
