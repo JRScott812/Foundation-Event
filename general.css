@@ -6,15 +6,6 @@ body {
     text-align: center; /* Center-align text in the body */
 }
 
-/* Responsive Image */
-img {
-    width: 50%; /* Default width for desktop */
-    max-width: 600px; /* Maximum width for larger screens */
-    height: auto; margin: 20px auto; /* Center the image */
-    display: block; /* Ensure image is a block element */
-    border-radius: 8px; /* Optional: Add rounded corners */
-}
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial Black', Gadget, sans-serif; /* Optional: Change font family */
