@@ -280,5 +280,5 @@ img {
 
 /* Countdown */
 countdownDate {
-    visibility: hidden;
+    display: none;
 }
