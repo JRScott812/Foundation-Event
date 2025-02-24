@@ -8,6 +8,7 @@ It advertises the upcoming events for the floor.
         - Write the "ugly" date & time format in the "countdownDate" tag
 - Update what's happening
 - Put the poster in the empty <img> tag
+- Forms for rgistration can be embedded on the proper page
 
 ## Homepage
 - Uncomment the link on the homepage index.html to show the next upcoming event.
