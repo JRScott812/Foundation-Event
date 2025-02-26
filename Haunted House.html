@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haunted House</title>
+
     <link rel="stylesheet" href="general.css" type="text/css">
+    <link rel="stylesheet" href="nav.css" type="text/css">
+    <link rel="stylesheet" href="image-row.css" type="text/css">
+
     <link rel="icon" type="image/x-icon" href="Assets/Foundation/Foundation Logo.svg">
-    <!--<script src="Countdown.js"></script>-->
+
+    <script src="Countdown.js"></script>
     <script src="No Source.js"></script>
 </head>
 
@@ -21,36 +26,48 @@
         </ul>
     </nav>
 
-    <h1>Foundation's Halloween Haunted House</h1>
-    <h2>October 31st, 7pm - 11pm (Halloween Night)</h2>
-    <!--
-    <countdownDate>2025-08-31T19:00:00</countdownDate>
-    <h3>Countdown:</h3>
-    <h3 id="countdown"></h3>
-    -->
-    <!--<img src="" alt="next Haunted House Poster">-->
+    <main>
+        <h1>Foundation's Halloween Haunted House</h1>
 
-    <h3>Register in Samuel Morris lobby.</h3>
+        <section id="date">
+            <h2>October 31st, 7pm - 11pm (Halloween Night)</h2>
+            <countdownDate></countdownDate>
+            <h3>Countdown:</h3>
+            <h3 id="countdown"></h3>
+        </section>
 
-    <h4>Previous Haunted Houses:</h4>
-    <div class="image-row">
-        <div class="image-container">
-            <div class="label">2024</div>
-            <img src="Assets/Haunted House/2024 Haunted House.jpeg" alt="2024 Haunted House Poster">
-        </div>
-        <div class="image-container">
-            <div class="label">2023</div>
-            <img src="Assets/Haunted House/2023 Haunted House.png" alt="2023 Haunted House Poster">
-        </div>
-        <div class="image-container">
-            <div class="label">2022</div>
-            <img src="Assets/Haunted House/2022 Haunted House.png" alt="2022 Haunted House Poster">
-        </div>
-        <div class="image-container">
-            <div class="label">2021</div>
-            <img src="Assets/Haunted House/2021 Haunted House.jpeg" alt="2021 Haunted House Poster">
-        </div>
-    </div>
+        <img src="" alt="next Haunted House Poster" id="current-event-poster">
+
+        <section id="details">
+            <p>A themed Haunted House in the basement of Samuel Morris Hall.</p>
+        </section>
+
+        <section id="registration">
+            <h3>Register in Samuel Morris lobby.</h3>
+        </section>
+
+        <section id="previous-events">
+            <h4>Previous Haunted Houses:</h4>
+            <div class="image-row">
+                <div class="image-container">
+                    <div class="label">2024</div>
+                    <img src="Assets/Haunted House/2024 Haunted House.jpeg" alt="2024 Haunted House Poster">
+                </div>
+                <div class="image-container">
+                    <div class="label">2023</div>
+                    <img src="Assets/Haunted House/2023 Haunted House.png" alt="2023 Haunted House Poster">
+                </div>
+                <div class="image-container">
+                    <div class="label">2022</div>
+                    <img src="Assets/Haunted House/2022 Haunted House.png" alt="2022 Haunted House Poster">
+                </div>
+                <div class="image-container">
+                    <div class="label">2021</div>
+                    <img src="Assets/Haunted House/2021 Haunted House.jpeg" alt="2021 Haunted House Poster">
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

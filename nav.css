@@ -1,0 +1,85 @@
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping */
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: inherit;
+    gap: 10px;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: 250ms;
+    border: 1px solid white;
+    /* Add borders to all sides */
+}
+
+nav li a:hover {
+    background-color: black;
+}
+
+nav li a:active {
+    background: lightgray;
+}
+
+/* Media queries for fine-tuning */
+@media (max-width: 1024px) {
+    nav ul {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 grid */
+    }
+
+    nav li {
+        margin: 0.5em 0;
+    }
+
+    nav li a {
+        font-size: 1.2em;
+        padding: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        grid-template-columns: 1fr;
+        /* Stack items vertically */
+    }
+
+    nav li a {
+        font-size: 1em;
+        padding: 0.6em;
+    }
+}

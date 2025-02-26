@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parade</title>
+
     <link rel="stylesheet" href="general.css" type="text/css">
+    <link rel="stylesheet" href="nav.css" type="text/css">
+    <link rel="stylesheet" href="image-row.css" type="text/css">
+
     <link rel="icon" type="image/x-icon" href="Assets/Foundation/Foundation Logo.svg">
-    <!--<script src="Countdown.js"></script>-->
+
+    <script src="Countdown.js"></script>
     <script src="No Source.js"></script>
 </head>
 
@@ -21,30 +26,45 @@
         </ul>
     </nav>
 
-    <h1>Foundation Southside Thanksgiving Day Parade</h1>
-    <!--
-    <h2>date</h2>
-    <countdownDate></countdownDate>
-    <h3>Countdown:</h3>
-    <h3 id="countdown"></h3>
-    
-    <img src="" alt="next Parade Poster">
-    -->
-    <h5>Previous Parades:</h5>
-    <div class="image-row">
-        <div class="image-container">
-            <div class="label">2024</div>
-            <img src="Assets/Parade/2024 Parade.jpg" alt="2024 Parade Poster">
-        </div>
-        <div class="image-container">
-            <div class="label">2023</div>
-            <img src="Assets/Parade/2023 Parade.jpeg" alt="2023 Parade Poster">
-        </div>
-        <div class="image-container">
-            <div class="label">2022</div>
-            <img src="" alt="2022 Parade Poster">
-        </div>
-    </div>
+    <main>
+        <h1>Foundation Southside Thanksgiving Day Parade</h1>
+
+        <section id="date">
+            <h2></h2>
+            <countdownDate></countdownDate>
+            <h3>Countdown:</h3>
+            <h3 id="countdown"></h3>
+        </section>
+
+        <img src="" alt="next Parade Poster" id="current-event-poster">
+
+        <section id="details">
+            <p>Parade through the Southside of Samuel Morris Hall. With various different acts, talents and
+                entertainment on display.</p>
+        </section>
+
+        <section id="registration">
+
+        </section>
+
+        <section id="previous-events">
+            <h5>Previous Parades:</h5>
+            <div class="image-row">
+                <div class="image-container">
+                    <div class="label">2024</div>
+                    <img src="Assets/Parade/2024 Parade.jpg" alt="2024 Parade Poster">
+                </div>
+                <div class="image-container">
+                    <div class="label">2023</div>
+                    <img src="Assets/Parade/2023 Parade.jpeg" alt="2023 Parade Poster">
+                </div>
+                <div class="image-container">
+                    <div class="label">2022</div>
+                    <img src="" alt="2022 Parade Poster">
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

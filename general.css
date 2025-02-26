@@ -3,9 +3,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 3.5em;
     text-align: center;
-    /* Center-align text in the body */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
 }
 
 /* Headings */
@@ -16,17 +22,13 @@ h4,
 h5,
 h6 {
     font-family: 'Arial Black', Gadget, sans-serif;
-    /* Optional: Change font family */
     text-align: center;
-    /* Center-align the headings */
     margin: 20px 0;
-    /* Add vertical margins */
 }
 
 /* Responsive text sizes */
 h1 {
     font-size: 8vw;
-    /* Use viewport width units for responsiveness */
 }
 
 h2 {
@@ -43,103 +45,16 @@ h6 {
     font-size: 3vw;
 }
 
-/* Table */
-table {
-    border-collapse: collapse;
-}
-
-th,
-td,
-tr {
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: middle;
-}
-
-thead {
-    font-size: x-large;
-}
-
-caption {
-    font-size: xx-large;
-}
-
-/* Navigation Bar */
-nav {
-    position: fixed;
-    /* Fixes the navbar to the top */
-    top: 0;
-    /* Positions it at the top */
-    width: 100%;
-    /* Ensures it spans the full width of the page */
-    z-index: 1000;
-    /* Ensures it appears above other content */
-    background: gray;
-    /* Keeps the background color consistent */
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: inherit;
-}
-
-nav li {
-    margin: 0;
-    padding: 0;
-    flex: 1;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    font-size: 1.5em;
-    padding: 1em;
-    text-decoration: none;
-    transition: 250ms;
-}
-
-nav li a:hover {
-    background-color: black;
-}
-
-nav li a:active {
-    background: lightgray;
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav li a {
-        font-size: 1.2em;
-        padding: 0.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    nav li a {
-        font-size: 1em;
-        padding: 0.6em;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
+/* Image styles */
+img {
+    width: 75%;
+    height: auto;
 }
 
 /* Media queries for fine-tuning */
 @media (max-width: 768px) {
     h1 {
         font-size: 8vw;
-        /* Adjust font size for tablets */
     }
 
     h2 {
@@ -160,7 +75,6 @@ nav li a:active {
 @media (max-width: 480px) {
     h1 {
         font-size: 10vw;
-        /* Larger text for small screens */
     }
 
     h2 {
@@ -176,105 +90,30 @@ nav li a:active {
     h6 {
         font-size: 5vw;
     }
-}
 
-/* Optional: Adjust font sizes further for specific elements like labels */
-.image-container .label {
-    font-size: 2vw;
-    /* Use viewport width units for responsiveness */
-}
-
-@media (max-width: 768px) {
-    .image-container .label {
-        font-size: 2.5vw;
-        /* Adjust font size for tablets */
+    img {
+        width: 100%;
+        height: auto;
     }
 }
 
-@media (max-width: 480px) {
-    .image-container .label {
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4vw;
+    }
+
+    h2 {
         font-size: 3vw;
-        /* Larger text for small screens */
     }
-}
 
-img {
-    width: 75%;
-}
-
-/* Main styles */
-.image-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* Aligns the images horizontally center */
-    gap: 10px;
-    /* Adds some space between the images */
-
-    .image-container {
-        position: relative;
-        flex: 1 1 200px;
-        /* Allow the images to grow and shrink, with a base width of 200px */
-        max-width: 300px;
-        /* Set a maximum width */
-        margin: 5px;
-        /* Add some margin around each container */
-
-        img {
-            width: 100%;
-            /* Make the image take up the full width of its container */
-            height: auto;
-            /* Maintain aspect ratio */
-            border-radius: 15px;
-            /* Optional: Add rounded corners */
-        }
-
-        .label {
-            position: absolute;
-            bottom: 8px;
-            /* Adjust the position of the label */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent background */
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 2vw;
-            /* Adjust font size using viewport width units */
-        }
+    h3 {
+        font-size: 2.5vw;
     }
-}
 
-/* Media queries */
-@media (max-width: 768px) {
-    .image-row {
-        .image-container {
-            flex-direction: column;
-
-            .label {
-                font-size: 2.5vw;
-                /* Slightly larger text for tablets */
-            }
-        }
-    }
-}
-
-@media (max-width: 480px) {
-    .image-row {
-        .image-container {
-            flex-direction: column;
-
-            .label {
-                font-size: 3vw;
-                /* Larger text for small screens */
-            }
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
+    h4,
+    h5,
+    h6 {
+        font-size: 2vw;
     }
 }
 

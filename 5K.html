@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation 5K</title>
+
     <link rel="stylesheet" href="general.css" type="text/css">
+    <link rel="stylesheet" href="nav.css" type="text/css">
+    <link rel="stylesheet" href="image-row.css" type="text/css">
+
     <link rel="icon" type="image/x-icon" href="Assets/Foundation/Foundation Logo.svg">
+
     <script src="Countdown.js"></script>
     <script src="No Source.js"></script>
 </head>
@@ -21,31 +26,41 @@
         </ul>
     </nav>
 
-    <h1>Foundation 5K</h1>
+    <main>
+        <h1>Foundation 5K</h1>
 
-    <img src="" alt="next 5K Poster">
-    <h2>Friday April 4th, 2025, 8pm</h2>
-    <countdownDate>2025-04-04T20:00:00</countdownDate>
-    <h3>Countdown:</h3>
-    <h3 id="countdown"></h3>
+        <section id="date">
+            <h2>Friday April 4th, 2025, 8pm</h2>
+            <countdownDate>2025-04-04T20:00:00</countdownDate>
+            <h3>Countdown:</h3>
+            <h3 id="countdown"></h3>
+        </section>
 
-    <h3>Run in Samuel Morris Hall through the Northside & Southside hallways and the lobby 72 times.</h3>
-    <h3>Food & entertainment will be in the lobby.</h3>
+        <img src="" alt="next 5K Poster" id="current-event-poster">
 
+        <section id="details">
+            <p>Run in Samuel Morris Hall through the Northside & Southside hallways and the lobby 72 times, with food &
+                entertainment will be in the lobby.</p>
+        </section>
 
-    <h2>Register here.</h2>
-    <iframe width="640px" height="480px"
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=dy5RgSre0kikiIWfIVsVwRSHQIFjfBlDph9IL1gfGDdUOUJGVU9QNVBaMzNLRFdZTEJMSzc5TEsxTy4u&embed=true"
-        frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
-        allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        <section id="registration">
+            <h2>Register here.</h2>
+            <iframe width="640px" height="480px"
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=dy5RgSre0kikiIWfIVsVwRSHQIFjfBlDph9IL1gfGDdUOUJGVU9QNVBaMzNLRFdZTEJMSzc5TEsxTy4u&embed=true"
+                frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        </section>
 
-    <h4>Previous Foundation 5Ks:</h4>
-    <div class="image-row">
-        <div class="image-container">
-            <div class="label">2024</div>
-            <img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster">
-        </div>
-    </div>
+        <section id="previous-events">
+            <h4>Previous Foundation 5Ks:</h4>
+            <div class="image-row">
+                <div class="image-container">
+                    <div class="label">2024</div>
+                    <img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster">
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
