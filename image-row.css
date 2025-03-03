@@ -20,7 +20,7 @@
     border: 2px solid #333;
 }
 
-.image-container .label {
+.image-container label {
     position: absolute;
     bottom: 8px;
     left: 50%;
@@ -34,13 +34,13 @@
 
 /* Media queries */
 @media (max-width: 768px) {
-    .image-container .label {
+    .image-container label {
         font-size: 2.5vw;
     }
 }
 
 @media (max-width: 480px) {
-    .image-container .label {
+    .image-container label {
         font-size: 3vw;
     }
 
@@ -48,4 +48,16 @@
         width: 100%;
         height: auto;
     }
+}
+
+/* Scaling for single image */
+.image-row:only-child .image-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.image-row:only-child .image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Ensure the image doesn't exceed the viewport height */
 }
