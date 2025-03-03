@@ -51,24 +51,35 @@ img {
     height: auto;
 }
 
+/* Main content layout */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.main-text {
+    max-width: 600px;
+    text-align: left;
+}
+
 /* Media queries for fine-tuning */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 8vw;
+    .main-content {
+        flex-direction: column;
+        align-items: center;
     }
 
-    h2 {
-        font-size: 6vw;
-    }
-
-    h3 {
-        font-size: 4.5vw;
-    }
-
-    h4,
-    h5,
-    h6 {
-        font-size: 3vw;
+    .main-text {
+        text-align: center;
     }
 }
 
@@ -114,6 +125,14 @@ img {
     h5,
     h6 {
         font-size: 2vw;
+    }
+
+    main {
+        padding: 40px;
+    }
+
+    section {
+        margin-bottom: 40px;
     }
 }
 

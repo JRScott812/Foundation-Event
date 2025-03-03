@@ -11,6 +11,9 @@
     flex: 1 1 200px;
     max-width: 300px;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .image-container img {
@@ -21,15 +24,12 @@
 }
 
 .image-container label {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 5px;
     border-radius: 5px;
     font-size: 2vw;
+    margin-bottom: 5px;
 }
 
 /* Media queries */
@@ -59,5 +59,23 @@
 .image-row:only-child .image-container img {
     width: 100%;
     height: auto;
-    max-height: 80vh; /* Ensure the image doesn't exceed the viewport height */
+    max-height: 80vh;
+    /* Ensure the image doesn't exceed the viewport height */
+}
+
+/* Grid layout for larger screens */
+@media (min-width: 1024px) {
+    .image-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .image-container {
+        margin: 10px;
+    }
+
+    .image-container label {
+        font-size: 1.5vw;
+    }
 }
