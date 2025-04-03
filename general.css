@@ -45,6 +45,23 @@ h6 {
     font-size: 3vw;
 }
 
+/* Responsive text sizes for paragraphs */
+p {
+    font-size: 2vw; /* Adjust this value as needed */
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 3vw; /* Adjust this value as needed for smaller screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    p {
+        font-size: 1.5vw; /* Adjust this value as needed for larger screens */
+    }
+}
+
 /* Image styles */
 img {
     width: 75%;
