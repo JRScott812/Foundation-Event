@@ -23,27 +23,33 @@ async function getEmojiFromTitle(file) {
 }
 
 /**
- * Updates the navigation bar with links for each event page.
+ * Updates the navigation bar with links for each event page, including emojis.
  * @param {Array} eventPages - The list of event pages.
  */
-function updateNavBar(eventPages) {
+async function updateNavBar(eventPages) {
 	const navList = document.querySelector("nav ul"); // Get the <ul> inside the <nav>
 	if (!navList) {
 		console.error("Navigation list not found.");
 		return;
 	}
 
-	eventPages.forEach(file => {
+	// Clear existing nav items
+	navList.innerHTML = "";
+
+	for (const file of eventPages) {
+		// Fetch the emoji for the current file
+		const { emoji } = await getEmojiFromTitle(file);
+
 		// Create a new <li> element
 		const listItem = document.createElement("li");
 		const link = document.createElement("a");
 		link.href = file.url;
-		link.textContent = `${file.name}`;
+		link.textContent = `${emoji ? emoji + " " : ""}${file.name}`;
 		listItem.appendChild(link);
 
 		// Append the <li> to the <ul>
 		navList.appendChild(listItem);
-	});
+	}
 }
 
 // Call the function to update the navigation bar
