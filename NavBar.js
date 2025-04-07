@@ -36,8 +36,8 @@ async function updateNavBar(eventPages) {
 	// Clear existing nav items
 	navList.innerHTML = "";
 
+	// Fetch emojis for each event page and update the nav bar
 	for (const file of eventPages) {
-		// Fetch the emoji for the current file
 		const { emoji } = await getEmojiFromTitle(file);
 
 		// Create a new <li> element
