@@ -1,17 +1,17 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 main {
-    padding: 20px;
+	padding: 20px;
 }
 
 section {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 /* Headings */
@@ -21,139 +21,145 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Arial Black', Gadget, sans-serif;
-    text-align: center;
-    margin: 20px 0;
+	font-family: 'Arial Black', Gadget, sans-serif;
+	text-align: center;
+	margin: 20px 0;
 }
 
 /* Responsive text sizes */
 h1 {
-    font-size: 8vw;
+	font-size: 8vw;
 }
 
 h2 {
-    font-size: 6vw;
+	font-size: 6vw;
 }
 
 h3 {
-    font-size: 4vw;
+	font-size: 4vw;
 }
 
 h4,
 h5,
 h6 {
-    font-size: 3vw;
+	font-size: 3vw;
 }
 
 /* Responsive text sizes for paragraphs */
 p {
-    font-size: 2vw; /* Adjust this value as needed */
+	font-size: 2vw;
 }
 
 @media (max-width: 768px) {
-    p {
-        font-size: 3vw; /* Adjust this value as needed for smaller screens */
-    }
+	p {
+		font-size: 3vw;
+	}
 }
 
 @media (min-width: 1024px) {
-    p {
-        font-size: 1.5vw; /* Adjust this value as needed for larger screens */
-    }
+	p {
+		font-size: 1.5vw;
+	}
 }
 
 /* Image styles */
 img {
-    width: 75%;
-    height: auto;
+	width: 75%;
+	height: auto;
 }
 
 /* Main content layout */
 .main-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
 }
 
 .main-image {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
+	max-width: 300px;
+	width: 100%;
+	height: auto;
 }
 
 .main-text {
-    max-width: 600px;
-    text-align: left;
+	max-width: 600px;
+	text-align: left;
 }
 
 /* Media queries for fine-tuning */
 @media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-    }
+	.main-content {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .main-text {
-        text-align: center;
-    }
+	.main-text {
+		text-align: center;
+	}
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 10vw;
-    }
+	h1 {
+		font-size: 10vw;
+	}
 
-    h2 {
-        font-size: 8vw;
-    }
+	h2 {
+		font-size: 8vw;
+	}
 
-    h3 {
-        font-size: 6vw;
-    }
+	h3 {
+		font-size: 6vw;
+	}
 
-    h4,
-    h5,
-    h6 {
-        font-size: 5vw;
-    }
+	h4,
+	h5,
+	h6 {
+		font-size: 5vw;
+	}
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 4vw;
-    }
+	h1 {
+		font-size: 4vw;
+	}
 
-    h2 {
-        font-size: 3vw;
-    }
+	h2 {
+		font-size: 3vw;
+	}
 
-    h3 {
-        font-size: 2.5vw;
-    }
+	h3 {
+		font-size: 2.5vw;
+	}
 
-    h4,
-    h5,
-    h6 {
-        font-size: 2vw;
-    }
+	h4,
+	h5,
+	h6 {
+		font-size: 2vw;
+	}
 
-    main {
-        padding: 40px;
-    }
+	main {
+		padding: 40px;
+	}
 
-    section {
-        margin-bottom: 40px;
-    }
+	section {
+		margin-bottom: 40px;
+	}
 }
 
 /* Countdown */
 countdownDate {
-    display: none;
+	display: none;
+}
+
+#error {
+	text-align: center;
+	font-size: 1.2em;
+	color: red;
 }

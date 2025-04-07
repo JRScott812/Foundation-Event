@@ -2,71 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation 5K</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="general.css" type="text/css">
-    <link rel="stylesheet" href="nav.css" type="text/css">
-    <link rel="stylesheet" href="image-row.css" type="text/css">
+	<meta name="description" content="Details about the Foundation Event, including date, registration, and previous events.">
+	<meta name="keywords" content="Foundation Event, Foundation 5K, 5K, Event Details">
+	<meta name="author" content="Foundation">
+	<meta name="robots" content="index, follow">
+	
+	<!--Preview Stuff-->
+	<meta property="og:title" content="Foundation 5K">
+	<meta property="og:description" content="A 5K run hosted by Foundation.">
+	<meta property="og:image" content=""> <!--Put the current event poster here-->
+	<meta property="og:url" content="https://FoundationEvent.com/5K.html">
+	<meta property="og:site_name" content="Foundation Event">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	
+	<link rel="stylesheet" href="general.css" type="text/css">
+	<link rel="stylesheet" href="nav.css" type="text/css">
+	<link rel="stylesheet" href="image-row.css" type="text/css">
+	
+	<link rel="icon" type="image/x-icon" href="Assets/Foundation/Foundation Logo.svg">
+	
+	<script src="Countdown.js" defer></script>
+	<script src="No Source.js" defer></script>
+	<script src="Insert Emoji.js" defer></script>
+	<script src="NavBar.js" type="module" defer></script>
 
-    <link rel="icon" type="image/x-icon" href="Assets/Foundation/Foundation Logo.svg">
-
-    <script src="Countdown.js"></script>
-    <script src="No Source.js"></script>
+	<title>🏃 Foundation 5K</title>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html" title="Homepage">🏠 Home</a></li>
-            <li><a href="Haunted House.html" title="Haunted Houses">👻 Haunted House</a></li>
-            <li><a href="Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
-            <li><a href="5K.html" title="5K">🏃 Foundation 5K</a></li>
-        </ul>
-    </nav>
+	<nav>
+		<ul>
+			<!-- Links will be dynamically added here -->
+		</ul>
+	</nav>
 
-    <main>
-        <section class="main-content">
-            <img src="" alt="next 5K Poster" id="current-event-poster"
-                class="main-image">
-            <div class="main-text">
-                <h1>Foundation 5K</h1>
+	<main>
+		<section class="main-content">
+			<img src="" alt="next 5K Poster" id="current-event-poster" class="main-image">
+			<div class="main-text">
+				<h1><emojiIcon></emojiIcon>Foundation 5K</h1>
 
-                <section id="date">
-                    <h2></h2>
-                    <countdownDate></countdownDate>
-                    <h3>Countdown:</h3>
-                    <h3 id="countdown"></h3>
-                </section>
+				<section id="date">
+					<h2></h2>
+					<countdownDate></countdownDate>
+					<h3>Countdown:</h3>
+					<h3 id="countdown"></h3>
+				</section>
 
-                <section id="details">
-                    <p>
-                        5K run/walk/jog at Samuel Morris Hall through the Northside & Southside hallways and the lobby 72 times.
-                        Food & entertainment will be in the lobby.
-                    </p>
-                </section>
-            </div>
-        </section>
+				<section id="details">
+					<p>
+						5K run/walk/jog at Samuel Morris Hall through the Northside & Southside hallways and the lobby 72 times.
+						Food & entertainment will be in the lobby.
+					</p>
+				</section>
+			</div>
+		</section>
 
-        <section id="registration">
-            <h2>Registration is closed!</h2>
-        </section>
+		<section id="registration">
+			<h2>Registration is closed!</h2>
+		</section>
 
-        <section id="previous-events">
-            <h2>Previous Foundation 5Ks:</h2>
-            <div class="image-row">
-                <div class="image-container">
-                    <label>2025</label>
-                    <img src="Assets\5K\Foundation 5k Poster.png">
-                </div>
-                <div class="image-container">
-                    <label>2024</label>
-                    <img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster">
-                </div>
-            </div>
-        </section>
-    </main>
+		<section id="previous-events">
+			<h2>Previous Foundation 5Ks:</h2>
+			<div class="image-row">
+				<div class="image-container">
+					<label>2025</label>
+					<img src="Assets\5K\Foundation 5k Poster.png">
+				</div>
+				<div class="image-container">
+					<label>2024</label>
+					<img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster">
+				</div>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>

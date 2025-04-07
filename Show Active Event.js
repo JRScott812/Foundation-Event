@@ -1,37 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const eventLinks = [
-        { id: "haunted-house-link", url: "https://foundationevent.com/Haunted%20House.html" },
-        { id: "parade-link", url: "https://foundationevent.com/Parade.html" },
-        { id: "5k-link", url: "https://foundationevent.com/5K.html" }
-    ];
+import { eventPages } from "./Event Pages.js";
 
-    const checkEventDate = async (event) => {
-        const response = await fetch(event.url);
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const dateElement = doc.querySelector('countdownDate');
-        if (dateElement) {
-            const date = Date.parse(dateElement.textContent.trim());
-            if (!isNaN(date)) {
-                return event;
-            }
-        }
-        return null;
-    };
+/**
+ * Hides or shows event links and the error message based on the active event.
+ * @param {Array} eventPages - The list of event pages.
+ * @param {Object|null} activeEvent - The active event object or null.
+ */
+function handleEventVisibility(eventPages, activeEvent) {
+	const errorElement = document.getElementById("error");
 
-    Promise.all(eventLinks.map(checkEventDate)).then(results => {
-        const activeEvent = results.find(event => event !== null);
+	eventPages.forEach(event => {
+		const linkElement = document.getElementById(event.id);
+		if (linkElement) {
+			linkElement.style.display = activeEvent && event.url === activeEvent.url ? "block" : "none";
+		}
+	});
 
-        if (activeEvent) {
-            eventLinks.forEach(event => {
-                if (event.url !== activeEvent.url) {
-                    const linkElement = document.getElementById(event.id);
-                    if (linkElement) {
-                        linkElement.style.display = 'none';
-                    }
-                }
-            });
-        }
-    });
-});
+	if (errorElement) {
+		errorElement.style.display = activeEvent ? "none" : "block";
+	}
+}
+
+// Main logic
+(async function () {
+	const activeEvent = eventPages.find(event => window.location.href.includes(event.url));
+	handleEventVisibility(eventPages, activeEvent);
+})();
