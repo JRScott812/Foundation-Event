@@ -16,8 +16,8 @@ function handleEventVisibility(eventPages, activeEvent) {
 	eventPages.forEach(event => {
 		const linkElement = document.getElementById(event.id);
 		if (linkElement) {
-			// Show the link if it matches the active event, otherwise hide it
-			linkElement.style.display = activeEvent && event.url === activeEvent.url ? "block" : "none";
+			// Show the link if it matches the active event id, otherwise hide it
+			linkElement.style.display = activeEvent && event.id === activeEvent.id ? "block" : "none";
 		}
 	});
 
