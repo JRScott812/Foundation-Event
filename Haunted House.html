@@ -19,6 +19,14 @@
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 
+	<!-- Preload stylesheets for faster loading -->
+	<link rel="preload" href="general.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="general.css"></noscript>
+	<link rel="preload" href="nav.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="nav.css"></noscript>
+	<link rel="preload" href="image-row.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="image-row.css"></noscript>
+
 	<link rel="stylesheet" href="general.css" type="text/css">
 	<link rel="stylesheet" href="nav.css" type="text/css">
 	<link rel="stylesheet" href="image-row.css" type="text/css">
@@ -49,7 +57,7 @@
 
 				<section id="date">
 					<h2>October 31st, 7pm - 11pm (Halloween Night)</h2>
-					<countdownDate>2025-10-31T19:00</countdownDate>
+					<countdownDate><!--2025-10-31T19:00--></countdownDate>
 					<h3>Countdown:</h3>
 					<h3 id="countdown"></h3>
 				</section>
@@ -69,19 +77,19 @@
 			<div class="image-row">
 				<div class="image-container">
 					<label>2024</label>
-					<img src="Assets/Haunted House/2024 Haunted House.jpeg" alt="2024 Haunted House Poster">
+					<img src="Assets/Haunted House/2024 Haunted House.jpeg" alt="2024 Haunted House Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2023</label>
-					<img src="Assets/Haunted House/2023 Haunted House.png" alt="2023 Haunted House Poster">
+					<img src="Assets/Haunted House/2023 Haunted House.png" alt="2023 Haunted House Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2022</label>
-					<img src="Assets/Haunted House/2022 Haunted House.png" alt="2022 Haunted House Poster">
+					<img src="Assets/Haunted House/2022 Haunted House.png" alt="2022 Haunted House Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2021</label>
-					<img src="Assets/Haunted House/2021 Haunted House.jpeg" alt="2021 Haunted House Poster">
+					<img src="Assets/Haunted House/2021 Haunted House.jpeg" alt="2021 Haunted House Poster" loading="lazy">
 				</div>
 			</div>
 		</section>

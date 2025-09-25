@@ -20,6 +20,14 @@
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 
+	<!-- Preload stylesheets for faster loading -->
+	<link rel="preload" href="general.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="general.css"></noscript>
+	<link rel="preload" href="nav.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="nav.css"></noscript>
+	<link rel="preload" href="image-row.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="image-row.css"></noscript>
+
 	<link rel="stylesheet" href="general.css" type="text/css">
 	<link rel="stylesheet" href="nav.css" type="text/css">
 	<link rel="stylesheet" href="image-row.css" type="text/css">
@@ -66,7 +74,7 @@
 		</section>
 
 		<section id="registration">
-			<h2>Registration is closed!</h2>
+			<h2>Registration will open closer to the date of the 5K (usually in April).</h2>
 		</section>
 
 		<section id="previous-events">
@@ -74,11 +82,11 @@
 			<div class="image-row">
 				<div class="image-container">
 					<label>2025</label>
-					<img src="Assets\5K\Foundation 5k Poster.png">
+					<img src="Assets/5K/Foundation 5k Poster.png" alt="2025 Foundation 5K Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2024</label>
-					<img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster">
+					<img src="Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster" loading="lazy">
 				</div>
 			</div>
 		</section>

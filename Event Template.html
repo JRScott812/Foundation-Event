@@ -4,6 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Cache Control -->
+	<meta http-equiv="Cache-Control" content="public, max-age=31536000">
 
 	<meta name="description"
 		content="Details about the Foundation Event, including date, registration, and previous events.">
@@ -19,6 +22,14 @@
 	<meta property="og:site_name" content="Foundation Event">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
+
+	<!-- Preload stylesheets for faster loading -->
+	<link rel="preload" href="general.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="general.css"></noscript>
+	<link rel="preload" href="nav.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="nav.css"></noscript>
+	<link rel="preload" href="image-row.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="image-row.css"></noscript>
 
 	<link rel="stylesheet" href="general.css" type="text/css">
 	<link rel="stylesheet" href="nav.css" type="text/css">

@@ -15,11 +15,19 @@
 	<meta property="og:title" content="Foundation Southside Thanksgiving Day Parade">
 	<meta property="og:description"
 		content="Parade through the Southside of Samuel Morris Hall.  With various acts, talents, and entertainment on display.">
-	<meta property="og:image" content=""> <!--Put the current event poster here-->
+	<meta property="og:image" content="Assets/Parade/2025 Parade.jpg"> <!--Put the current event poster here-->
 	<meta property="og:url" content="https://FoundationEvent.com/Parade.html">
 	<meta property="og:site_name" content="Foundation Event">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
+
+	<!-- Preload stylesheets for faster loading -->
+	<link rel="preload" href="general.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="general.css"></noscript>
+	<link rel="preload" href="nav.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="nav.css"></noscript>
+	<link rel="preload" href="image-row.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="image-row.css"></noscript>
 
 	<link rel="stylesheet" href="general.css" type="text/css">
 	<link rel="stylesheet" href="nav.css" type="text/css">
@@ -69,6 +77,10 @@
 
 		<section id="registration">
 			<h3>Register your act with the parade's leaders.</h3>
+			<iframe width="640px" height="480px"
+				src="https://forms.office.com/Pages/ResponsePage.aspx?id=dy5RgSre0kikiIWfIVsVwRSHQIFjfBlDph9IL1gfGDdUN1hSV1RYT09PTEVEOTMxOEtEVEU0RE9SWi4u&embed=true"
+				frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+				allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 		</section>
 
 		<section id="previous-events">
@@ -76,15 +88,15 @@
 			<div class="image-row">
 				<div class="image-container">
 					<label>2024</label>
-					<img src="Assets/Parade/2024 Parade.jpg" alt="2024 Parade Poster">
+					<img src="Assets/Parade/2024 Parade.jpg" alt="2024 Parade Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2023</label>
-					<img src="Assets/Parade/2023 Parade.jpeg" alt="2023 Parade Poster">
+					<img src="Assets/Parade/2023 Parade.jpeg" alt="2023 Parade Poster" loading="lazy">
 				</div>
 				<div class="image-container">
 					<label>2022</label>
-					<img src="" alt="2022 Parade Poster">
+					<img src="" alt="2022 Parade Poster" loading="lazy">
 				</div>
 			</div>
 		</section>
