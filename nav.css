@@ -36,19 +36,46 @@ nav li a {
 	font-size: 1.1rem;
 	padding: 0.7em 1.2em;
 	text-decoration: none;
-	transition: background-color 250ms, color 250ms;
+	transition: background-color 250ms, color 250ms, transform 150ms ease;
 	border: 1px solid white;
 	border-radius: 4px;
 	font-weight: 500;
+	cursor: pointer;
+	/* Better touch target size for mobile */
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 nav li a:hover {
 	background-color: rgba(0, 0, 0, 0.8);
-	transform: translateY(-1px);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	border-color: rgba(255, 255, 255, 0.9);
 }
 
 nav li a:active {
-	background: lightgray;
+	background: rgba(0, 0, 0, 0.9);
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav li a:focus {
+	outline: 2px solid #ffffff;
+	outline-offset: 2px;
+}
+
+/* Current page indicator */
+nav li a[href]:not([href=""]):not([href="#"]) {
+	position: relative;
+}
+
+/* Active/current page styling - add this class via JavaScript */
+nav li a.current-page {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: #ffffff;
+	font-weight: 600;
 }
 
 /* Media queries for fine-tuning */
@@ -59,13 +86,36 @@ nav li a:active {
 
 	nav li a {
 		font-size: 1rem;
-		padding: 0.6em 0.8em;
+		padding: 0.8em 1em;
+		/* Larger touch targets on mobile */
+		min-height: 48px;
+	}
+
+	/* Mobile tap highlight */
+	nav li a {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
 @media (max-width: 480px) {
 	nav li a {
 		font-size: 0.9rem;
-		padding: 0.5em 0.7em;
+		padding: 0.7em 0.8em;
+		min-height: 44px;
+	}
+}
+
+/* Touch device specific styles */
+@media (hover: none) and (pointer: coarse) {
+	nav li a:hover {
+		/* Disable hover effects on touch devices */
+		background-color: transparent;
+		transform: none;
+		box-shadow: none;
+	}
+
+	nav li a:active {
+		background-color: rgba(255, 255, 255, 0.3);
+		transform: scale(0.98);
 	}
 }

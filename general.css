@@ -266,3 +266,31 @@ a:hover {
 	color: #1e3d6f;
 	text-decoration: underline;
 }
+
+/* Event link buttons in main content */
+.main-text h3 a {
+	display: inline-block;
+	background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+	color: white;
+	padding: 12px 20px;
+	border-radius: 25px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(44, 90, 160, 0.3);
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.main-text h3 a:hover {
+	background: linear-gradient(135deg, #1e3d6f, #2c5aa0);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(44, 90, 160, 0.4);
+	text-decoration: none;
+	color: white;
+}
+
+.main-text h3 a:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 6px rgba(44, 90, 160, 0.3);
+}
