@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	navLinks.forEach(link => {
 		const linkHref = link.getAttribute('href');
-		
+
 		// Direct filename match (handles spaces and special characters)
 		if (linkHref === currentFile) {
 			link.classList.add('current-page');

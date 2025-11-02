@@ -113,7 +113,8 @@ img {
 
 /* Specific aspect ratios for different image types */
 .main-image[src*="Foundation Logo"] {
-	aspect-ratio: 469 / 663; /* Foundation Logo specific ratio */
+	aspect-ratio: 469 / 663;
+	/* Foundation Logo specific ratio */
 }
 
 /* Main content layout */
