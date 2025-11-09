@@ -46,19 +46,21 @@
 </head>
 
 <body>
-	<nav>
-		<ul>
-			<li><a href="index.html" title="Home">🏠 Home</a></li>
-			<li><a href="Haunted House.html" title="Haunted House">👻 Haunted House</a></li>
-			<li><a href="Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
-			<li><a href="5K.html" title="5K">🏃Foundation 5K</a></li>
-			<li><a href="About Us.html" title="About Us">❓ About Us</a></li>
-			<li><a href="Privacy Policy.html" title="Privacy Policy">🔒 Privacy Policy</a></li>
-			<li><a href="Terms & Conditions.html" title="Terms & Conditions.html">📃 Terms & Conditions</a></li>
-		</ul>
-	</nav>
+	<header class="site-header" role="banner">
+		<a class="skip-link" href="#main-content">Skip to content</a>
+		<div class="header-inner">
+			<nav aria-label="Main navigation">
+				<ul>
+					<li><a href="index.html" title="Home">🏠 Home</a></li>
+					<li><a href="Haunted House.html" title="Haunted House">🎃 Haunted House</a></li>
+					<li><a href="Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
+					<li><a href="5K.html" title="5K">🏃Foundation 5K</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-	<main>
+	<main id="main-content">
 		<section class="main-content">
 			<div class="main-text">
 				<h1>❓ About Us</h1>
@@ -70,21 +72,41 @@
 						Hall</a> at <a href="https://www.taylor.edu/">Taylor University</a>.
 				</p>
 				<h2>🐻🥄👺</h2>
-				<quote>
+				<blockquote>
 					"And so I tell you, Peter: you are a rock, and on this rock foundation I will build my church, and
 					not even death
 					will ever be able to overcome it."<br>
 					- <b>Matthew 16:18</b> (Good News Translation)
-				</quote>
-
-				<h3><a href="https://www.instagram.com/foundation_tayloru/">Foundation Instagram</a></h3>
-
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500.71320157047194!2d-85.49526779327698!3d40.458523818416836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881504239c82f13b%3A0x8fca221b0b68a385!2sSamuel%20Morris%20Hall!5e0!3m2!1sen!2sus!4v1762057211746!5m2!1sen!2sus"
-					  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</blockquote>
 			</div>
 		</section>
 	</main>
+
+	<footer class="site-footer" role="contentinfo">
+		<div class="footer-inner">
+			<nav class="footer-nav" aria-label="Footer navigation">
+				<a href="Privacy Policy.html">🔒 Privacy Policy</a>
+				<a href="Terms & Conditions.html">📃 Terms & Conditions</a>
+				<a href="About Us.html">❓About Us</a>
+			</nav>
+
+			<address class="footer-address">
+				<strong>Foundation</strong> Samuel Morris Hall: 1748 Vayhinger Loop, Upland, IN 46989
+			</address>
+
+			<div class="footer-social" aria-label="Social links">
+				<a href="https://www.instagram.com/foundation_tayloru/" target="_blank" rel="noopener"
+					title="Follow Foundation on Instagram">📸 Instagram</a>
+			</div>
+
+			<small class="footer-copy">&copy; 2025 Foundation. All rights reserved.</small>
+			<div class="footer-contact">
+				📞 <a href="tel:+17656685706" title="Call Foundation">+1 (765) 998-5706</a> • 📧 <a
+					href="mailto:FoundationHauntedHouse@gmail.com"
+					title="Email Foundation">FoundationHauntedHouse@gmail.com</a>
+			</div>
+		</div>
+	</footer>
 </body>
 
 </html>

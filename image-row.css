@@ -40,13 +40,26 @@
 }
 
 @media (max-width: 480px) {
+	.image-row {
+		gap: 8px;
+	}
+
+	.image-container {
+		flex: 1 1 100%;
+		max-width: 100%;
+		margin: 3px;
+	}
+
 	.image-container label {
-		font-size: 0.8rem;
+		font-size: 0.85rem;
+		padding: 4px 8px;
 	}
 
 	.image-container img {
 		width: 100%;
 		height: auto;
+		border-radius: 10px;
+		border: 1px solid #333;
 	}
 }
 
