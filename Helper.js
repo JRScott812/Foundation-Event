@@ -15,7 +15,8 @@ images.forEach(img => {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const currentPath = window.location.pathname;
-	const currentFile = currentPath.split('/').pop();
+	const currentFileFromPath = currentPath.split('/').pop();
+	const currentFile = currentFileFromPath === '' ? 'index.html' : currentFileFromPath;
 	const navLinks = document.querySelectorAll('nav a');
 
 	navLinks.forEach(link => {
