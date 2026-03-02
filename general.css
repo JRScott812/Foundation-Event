@@ -307,24 +307,66 @@ img {
 @media (min-width: 1024px) {
 	main {
 		padding: 40px;
+		max-width: min(94vw, 1400px);
 	}
 
 	section {
-		margin-bottom: 40px;
+		margin-bottom: 44px;
 	}
 
 	.main-content {
-		gap: 40px;
+		gap: clamp(40px, 4vw, 72px);
 	}
 
 	.main-image {
-		max-width: 600px;
+		max-width: 680px;
+	}
+
+	.main-text {
+		max-width: 78ch;
+		font-size: clamp(1.08rem, 0.3vw + 1rem, 1.2rem);
+	}
+}
+
+@media (min-width: 1280px) {
+	h1 {
+		font-size: clamp(3rem, 2.2vw, 3.5rem);
+	}
+
+	h2 {
+		font-size: clamp(2.25rem, 1.6vw, 2.6rem);
+	}
+
+	h3 {
+		font-size: clamp(1.75rem, 1vw, 2rem);
+	}
+
+	p {
+		font-size: clamp(1.2rem, 0.35vw + 1.1rem, 1.3rem);
 	}
 }
 
 /* Countdown */
 countdownDate {
 	display: none;
+}
+
+#date {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+#date h2:empty {
+	display: none;
+}
+
+#date h3,
+#countdown {
+	margin: 10px 0;
+	white-space: nowrap;
 }
 
 #countdown {
@@ -354,6 +396,13 @@ iframe {
 	width: 100%;
 	max-width: 640px;
 	height: 480px;
+}
+
+@media (min-width: 1024px) {
+	iframe {
+		max-width: min(100%, 980px);
+		height: clamp(460px, 38vw, 560px);
+	}
 }
 
 @media (max-width: 768px) {

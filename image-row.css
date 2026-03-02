@@ -80,15 +80,22 @@
 @media (min-width: 1024px) {
 	.image-row {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 20px;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: clamp(20px, 1.8vw, 30px);
 	}
 
 	.image-container {
-		margin: 10px;
+		margin: 0;
+		max-width: none;
 	}
 
 	.image-container label {
-		font-size: 1.2rem;
+		font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.3rem);
+	}
+}
+
+@media (min-width: 1600px) {
+	.image-row {
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	}
 }
