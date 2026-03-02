@@ -41,13 +41,33 @@ function startCountdown(countDownDate) {
 		return;
 	}
 
-	const intervalId = setInterval(() => {
+	countdownElement.style.whiteSpace = "nowrap";
+	countdownElement.style.transition = "color 0.9s linear";
+
+	const colorScaleWindowMs = 30 * 24 * 60 * 60 * 1000;
+	const startColor = { r: 34, g: 197, b: 94 };
+	const endColor = { r: 239, g: 68, b: 68 };
+
+	const getProgressColor = (distance) => {
+		const clampedDistance = Math.min(Math.max(distance, 0), colorScaleWindowMs);
+		const progress = 1 - (clampedDistance / colorScaleWindowMs);
+		const clampedProgress = Math.min(1, Math.max(0, progress));
+
+		const r = Math.round(startColor.r + (endColor.r - startColor.r) * clampedProgress);
+		const g = Math.round(startColor.g + (endColor.g - startColor.g) * clampedProgress);
+		const b = Math.round(startColor.b + (endColor.b - startColor.b) * clampedProgress);
+
+		return `rgb(${r}, ${g}, ${b})`;
+	};
+
+	const updateCountdown = () => {
 		const now = Date.now();
 		const distance = countDownDate - now;
 
 		if (distance < 0) {
 			clearInterval(intervalId);
 			countdownElement.textContent = "EXPIRED";
+			countdownElement.style.color = `rgb(${endColor.r}, ${endColor.g}, ${endColor.b})`;
 			return;
 		}
 
@@ -57,7 +77,11 @@ function startCountdown(countDownDate) {
 		const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 		countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-	}, 1000);
+		countdownElement.style.color = getProgressColor(distance);
+	};
+
+	const intervalId = setInterval(updateCountdown, 1000);
+	updateCountdown();
 }
 
 // Main logic
