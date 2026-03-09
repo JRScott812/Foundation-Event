@@ -98,7 +98,8 @@ p {
 
 /* Image styles */
 img {
-	width: 75%;
+	max-width: 100%;
+	width: auto;
 	height: auto;
 }
 
@@ -347,7 +348,8 @@ img {
 }
 
 /* Countdown */
-countdownDate {
+countdownDate,
+#countdown-date {
 	display: none;
 }
 

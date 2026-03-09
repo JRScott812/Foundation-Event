@@ -3,9 +3,10 @@
  * @returns {number|null} - The parsed date in milliseconds or null if invalid.
  */
 function getCountdownDate() {
-	const dateElement = document.querySelector("countdownDate");
+	const dateElement = document.querySelector("#countdown-date, countdownDate");
 	if (dateElement) {
-		const date = Date.parse(dateElement.textContent.trim());
+		const rawDate = dateElement.getAttribute("datetime") || dateElement.textContent.trim();
+		const date = Date.parse(rawDate);
 		if (!isNaN(date)) {
 			return date;
 		}
@@ -15,18 +16,12 @@ function getCountdownDate() {
 }
 
 /**
- * Hides the countdown section and event poster if the date is invalid.
+ * Hides the countdown section if the date is invalid.
  */
 function hideCountdownElements() {
 	const dateSection = document.getElementById("date");
 	if (dateSection) {
-		dateSection.querySelectorAll("*").forEach(child => {
-			child.style.display = "none";
-		});
-	}
-	const posterElement = document.getElementById("current-event-poster");
-	if (posterElement) {
-		posterElement.style.display = "none";
+		dateSection.style.display = "none";
 	}
 }
 
@@ -86,7 +81,7 @@ function startCountdown(countDownDate) {
 
 // Main logic
 const countDownDate = getCountdownDate();
-if (countDownDate) {
+if (countDownDate !== null) {
 	startCountdown(countDownDate);
 } else {
 	hideCountdownElements();

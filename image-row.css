@@ -23,6 +23,7 @@
 	border: 2px solid #333;
 }
 
+.image-container figcaption,
 .image-container label {
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
@@ -34,6 +35,7 @@
 
 /* Media queries */
 @media (max-width: 768px) {
+	.image-container figcaption,
 	.image-container label {
 		font-size: 0.9rem;
 	}
@@ -50,6 +52,7 @@
 		margin: 3px;
 	}
 
+	.image-container figcaption,
 	.image-container label {
 		font-size: 0.85rem;
 		padding: 4px 8px;
@@ -63,17 +66,17 @@
 	}
 }
 
-/* Scaling for single image */
-.image-row:only-child .image-container {
-	flex: 1 1 100%;
-	max-width: 100%;
+/* Keep single images from stretching too wide */
+.image-row > .image-container:only-child {
+	flex: 0 1 420px;
+	max-width: 420px;
+	width: min(100%, 420px);
 }
 
-.image-row:only-child .image-container img {
+.image-row > .image-container:only-child img {
 	width: 100%;
 	height: auto;
 	max-height: 80vh;
-	/* Ensure the image doesn't exceed the viewport height */
 }
 
 /* Grid layout for larger screens */
@@ -89,6 +92,12 @@
 		max-width: none;
 	}
 
+	.image-row > .image-container:only-child {
+		max-width: 420px;
+		justify-self: center;
+	}
+
+	.image-container figcaption,
 	.image-container label {
 		font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.3rem);
 	}
