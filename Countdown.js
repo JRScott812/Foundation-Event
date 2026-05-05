@@ -3,6 +3,8 @@
  * Displays countdown to event with dynamic color transition
  */
 
+import { CONFIG } from './config.js'
+
 /**
  * Parses the countdown date from the element.
  * @returns {number|null} - The parsed date in milliseconds or null if invalid.
@@ -91,11 +93,21 @@ function startCountdown (countDownDate) {
 }
 
 // Main logic
-document.addEventListener('DOMContentLoaded', function () {
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', function () {
+		const countDownDate = getCountdownDate()
+		if (countDownDate !== null) {
+			startCountdown(countDownDate)
+		} else {
+			hideCountdownElements()
+		}
+	})
+} else {
+	// If the DOM is already loaded, run immediately
 	const countDownDate = getCountdownDate()
 	if (countDownDate !== null) {
 		startCountdown(countDownDate)
 	} else {
 		hideCountdownElements()
 	}
-})
+}

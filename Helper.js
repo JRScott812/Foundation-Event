@@ -3,6 +3,8 @@
  * Handles image fallbacks and navigation highlighting
  */
 
+import { CONFIG } from './config.js'
+
 // Initialize image error handling
 function initializeImageHandling () {
 	const fallbackImage = CONFIG.fallbackImage
@@ -73,7 +75,13 @@ function initializeNavigation () {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', function () {
+		initializeImageHandling()
+		initializeNavigation()
+	})
+} else {
+	// If the DOM is already loaded, run immediately
 	initializeImageHandling()
 	initializeNavigation()
-})
+}

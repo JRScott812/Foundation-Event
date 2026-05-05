@@ -3,7 +3,7 @@
  * Centralized configuration for site-wide settings
  */
 
-const CONFIG = {
+export const CONFIG = {
 	// Default fallback image
 	fallbackImage: '/Assets/Foundation/Foundation Image Not Found.svg',
 
@@ -25,9 +25,4 @@ const CONFIG = {
 	nav: {
 		activeClass: 'current-page'
 	}
-}
-
-// Export for module systems if needed
-if (typeof module !== 'undefined' && module.exports) {
-	module.exports = CONFIG
 }
