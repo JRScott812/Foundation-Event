@@ -1,0 +1,22 @@
+---
+name: HTML Validation
+
+on:
+  push:
+    branches: [main]
+    paths: [ '**.html', '.github/workflows/validate.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ '**.html', '.github/workflows/validate.yml' ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5-validator-action@master
+        with:
+          root: .
+          extra: --ignore="Duplicate ID|Bad value|Duplicate name"

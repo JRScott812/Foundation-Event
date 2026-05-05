@@ -1,130 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: "🦃 Thanksgiving Parade"
+description: "Parade through the Southside of Samuel Morris Hall. With various acts, talents, and entertainment on
+display."
+keywords: "Foundation Event, Thanksgiving Parade, Event Details, Talent Show"
+og_title: "Foundation Southside Thanksgiving Day Parade"
+og_description: "Parade through the Southside of Samuel Morris Hall. With various acts, talents, and entertainment on
+display."
+og_image: "/Assets/Parade/2025 Parade.jpg"
+data_page: "parade"
+include_countdown: true
+---
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Foundation Thanksgiving Parade",
+  "description": "Parade through the Southside of Samuel Morris Hall with various acts, talents, and entertainment",
+  "location": {
+	"@type": "Place",
+	"name": "Samuel Morris Hall",
+	"address": {
+	  "@type": "PostalAddress",
+	  "streetAddress": "1748 Vayhinger Loop",
+	  "addressLocality": "Upland",
+	  "addressRegion": "IN",
+	  "postalCode": "46989",
+	  "addressCountry": "US"
+	}
+  },
+  "organizer": {
+	"@type": "Organization",
+	"name": "Foundation",
+	"url": "https://foundationevent.com"
+  },
+  "eventStatus": "https://schema.org/EventScheduled"
+}
+</script>
 
-	<meta name="description"
-		content="Parade through the Southside of Samuel Morris Hall. With various acts, talents, and entertainment on display.">
-	<meta name="keywords" content="Foundation Event, Thanksgiving Parade, Event Details, Talent Show">
-	<meta name="author" content="Foundation">
-	<meta name="robots" content="index, follow">
+<section class="main-content">
+	<!--<img src="/Assets/Parade/poster.png" alt="next Parade Poster" id="current-event-poster" class="main-image">-->
+	<div class="main-text">
+		<h1>🦃 Foundation Southside Thanksgiving Day Parade</h1>
 
-	<!--Preview Stuff-->
-	<meta property="og:title" content="Foundation Southside Thanksgiving Day Parade">
-	<meta property="og:description"
-		content="Parade through the Southside of Samuel Morris Hall. With various acts, talents, and entertainment on display.">
-	<meta property="og:image" content=""> <!--Put the current event poster here-->
-	<meta property="og:url" content="https://FoundationEvent.com/Parade.html">
-	<meta property="og:site_name" content="Foundation Event">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="general.css">
-	<link rel="stylesheet" href="nav.css">
-	<link rel="stylesheet" href="image-row.css">
-
-	<link rel="icon" type="image/svg+xml" href="Assets/Foundation/Foundation Logo Simple.svg">
-
-	<script src="Countdown.js" defer></script>
-	<script src="Helper.js" defer></script>
-
-	<title>🦃 Thanksgiving Parade</title>
-</head>
-
-<body>
-	<header class="site-header" role="banner">
-		<a class="skip-link" href="#main-content">Skip to content</a>
-		<div class="header-inner">
-			<nav aria-label="Main navigation">
-				<ul>
-					<li><a href="index.html" title="Home">🪏 Home</a></li>
-					<li><a href="Haunted House.html" title="Haunted House">🎃 Haunted House</a></li>
-					<li><a href="Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
-					<li><a href="5K.html" title="5K">🏃 Foundation 5K</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<main id="main-content">
-		<section class="main-content">
-			<!--<img src="" alt="next Parade Poster" id="current-event-poster" class="main-image">-->
-			<div class="main-text">
-				<h1>🦃 Foundation Southside Thanksgiving Day Parade</h1>
-
-				<section id="date">
-					<h2></h2>
-					<time id="countdown-date"></time>
-					<h3>Countdown:</h3>
-					<h3 id="countdown"></h3>
-				</section>
-
-				<section id="details">
-					<p>
-						Parade through the Southside of Samuel Morris Hall.
-						With various acts, talents, and entertainment on display.
-					</p>
-				</section>
-			</div>
-
+		<section id="date">
+			<h2></h2>
+			<time id="countdown-date"></time>
+			<h3>Countdown:</h3>
+			<h3 id="countdown" aria-label="Countdown timer" aria-live="polite"></h3>
 		</section>
 
-		<section id="registration">
-			<h3>Register your act with the parade's leaders.</h3>
+		<section id="details">
+			<p>
+				Parade through the Southside of Samuel Morris Hall.
+				With various acts, talents, and entertainment on display.
+			</p>
 		</section>
+	</div>
 
-		<section id="previous-events">
-			<h2>Previous Parades:</h2>
-			<div class="image-row">
-				<figure class="image-container">
-					<figcaption>2025</figcaption>
-					<img src="Assets/Parade/2025 Parade.jpg" alt="2025 Parade Poster" loading="lazy">
-				</figure>
-				<figure class="image-container">
-					<figcaption>2024</figcaption>
-					<img src="Assets/Parade/2024 Parade.jpg" alt="2024 Parade Poster" loading="lazy">
-				</figure>
-				<figure class="image-container">
-					<figcaption>2023</figcaption>
-					<img src="Assets/Parade/2023 Parade.jpeg" alt="2023 Parade Poster" loading="lazy">
-				</figure>
-				<figure class="image-container">
-					<figcaption>2022</figcaption>
-					<img src="Assets/Foundation/Foundation Image Not Found.svg" alt="2022 Parade Poster not available" loading="lazy">
-				</figure>
-			</div>
-		</section>
-	</main>
+</section>
 
-	<footer class="site-footer" role="contentinfo">
-		<div class="footer-inner">
-			<nav class="footer-nav" aria-label="Footer navigation">
-				<a href="Privacy Policy.html">🔒 Privacy Policy</a>
-				<a href="Terms & Conditions.html">📃 Terms & Conditions</a>
-				<a href="About Us.html">❓About Us</a>
-				<a href="Contact Us.html">💬 Contact Us</a>
-			</nav>
+<section id="registration">
+	<h3>Register your act with the parade's leaders.</h3>
+</section>
 
-			<address class="footer-address">
-				<strong>Foundation</strong> Samuel Morris Hall: 1748 Vayhinger Loop, Upland, IN 46989
-			</address>
-
-			<div class="footer-social" aria-label="Social links">
-				<a href="https://www.instagram.com/foundation_tayloru/" target="_blank" rel="noopener noreferrer"
-					title="Follow Foundation on Instagram">📸 Instagram</a>
-			</div>
-
-			<small class="footer-copy">&copy; 2026 Foundation. All rights reserved.</small>
-			<div class="footer-contact">
-				📞 <a href="tel:+17656685706" title="Call Foundation">+1 (765) 998-5706</a> • 📧 <a
-					href="mailto:FoundationHauntedHouse@gmail.com"
-					title="Email Foundation">FoundationHauntedHouse@gmail.com</a>
-			</div>
-		</div>
-	</footer>
-</body>
-
-</html>
+<section id="previous-events">
+	<h2>Previous Parades:</h2>
+	<div class="image-row">
+		<figure class="image-container">
+			<figcaption>2025</figcaption>
+			<img src="/Assets/Parade/2025 Parade.jpg" alt="2025 Thanksgiving Parade Event Poster" loading="lazy">
+		</figure>
+		<figure class="image-container">
+			<figcaption>2024</figcaption>
+			<img src="/Assets/Parade/2024 Parade.jpg" alt="2024 Thanksgiving Parade Event Poster" loading="lazy">
+		</figure>
+		<figure class="image-container">
+			<figcaption>2023</figcaption>
+			<img src="/Assets/Parade/2023 Parade.jpeg" alt="2023 Thanksgiving Parade Event Poster" loading="lazy">
+		</figure>
+		<figure class="image-container">
+			<figcaption>2022</figcaption>
+			<img src="/Assets/Foundation/Foundation Image Not Found.svg"
+				alt="2022 Thanksgiving Parade Event Poster not available" loading="lazy">
+		</figure>
+	</div>
+</section>

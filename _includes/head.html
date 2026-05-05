@@ -1,0 +1,31 @@
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Cache Control -->
+	<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+
+	<meta name="description" content="{{ page.description | default: site.description }}">
+	<meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}Foundation Event, Event Details{% endif %}">
+	<meta name="author" content="{{ site.author }}">
+	<meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+
+	<!-- Open Graph / Social Preview -->
+	<meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
+	<meta property="og:description" content="{{ page.description | default: site.description }}">
+	<meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% endif %}">
+	<meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% else %}/index.html{% endif %}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/general.css">
+	<link rel="stylesheet" href="/nav.css">
+
+	<!-- Preload critical resources -->
+	<link rel="preload" href="/Assets/Foundation/Foundation Logo Simple.svg" as="image" type="image/svg+xml">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="/Assets/Foundation/Foundation Logo Simple.svg">
+
+	<title>{{ page.title | default: site.title }}</title>

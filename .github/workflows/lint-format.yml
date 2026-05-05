@@ -1,0 +1,29 @@
+---
+name: Lint & Format Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  super-linter:
+    name: Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          LINTER_RULES_PATH: .github/linters
+          VALIDATE_ALL_CODEBASE: true
+          # Exclude large asset folders and generated site
+          FILTER_REGEX_EXCLUDE: '(^Assets/|^_site/|^\.git/)'
+          # Disable StandardJS, use ESLint instead (configured to accept tabs)
+          DISABLE: JSCPD,NATURAL_LANGUAGE,JAVASCRIPT_STANDARD,GITHUB_ACTIONS
+          # Optionally run in quiet mode
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: false
