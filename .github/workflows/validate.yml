@@ -1,8 +1,9 @@
+---
 name: HTML Validation
 
 on:
   push:
-    branches: [ main ]
+	branches: [main]
     paths: [ '**.html', '.github/workflows/validate.yml' ]
   pull_request:
     branches: [ main ]

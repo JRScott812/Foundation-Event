@@ -1,4 +1,4 @@
-# Events configuration
+---
 events:
   - name: "Haunted House"
     slug: "haunted-house"

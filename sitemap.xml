@@ -29,7 +29,7 @@
 	<priority>0.5</priority>
   </url>
   <url>
-	<loc>https://foundationevent.com/Terms%20&%20Conditions.html</loc>
+	<loc>https://foundationevent.com/Terms%20&amp;%20Conditions.html</loc>
 	<priority>0.5</priority>
   </url>
 </urlset>
