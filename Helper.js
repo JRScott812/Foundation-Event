@@ -30,53 +30,50 @@ function initializeImageHandling() {
 
 // Initialize navigation highlighting
 function initializeNavigation() {
-	document.addEventListener('DOMContentLoaded', function () {
-		const currentPath = window.location.pathname;
-		const currentFileFromPath = currentPath.split('/').pop();
-		const currentFile = currentFileFromPath === '' ? 'index.html' : currentFileFromPath;
-		const navLinks = document.querySelectorAll('header nav a');
+	const currentPath = window.location.pathname;
+	const currentFileFromPath = currentPath.split('/').pop();
+	const currentFile = currentFileFromPath === '' ? 'index.html' : currentFileFromPath;
+	const navLinks = document.querySelectorAll('header nav a');
 
-		const safeDecode = function (value) {
-			try {
-				return decodeURIComponent(value);
-			} catch {
-				return value;
-			}
-		};
+	const safeDecode = function (value) {
+		try {
+			return decodeURIComponent(value);
+		} catch (e) {
+			return value;
+		}
+	};
 
-		const normalizedCurrentFile = safeDecode(currentFile);
+	const normalizedCurrentFile = safeDecode(currentFile);
 
-		navLinks.forEach(link => {
-			const linkHref = link.getAttribute('href');
-			if (!linkHref) {
-				return;
-			}
+	navLinks.forEach(link => {
+		const linkHref = link.getAttribute('href');
+		if (!linkHref) return;
 
-			const normalizedHref = safeDecode(linkHref);
-			const hrefStem = normalizedHref.replace('.html', '');
+		const normalizedHref = safeDecode(linkHref);
+		const hrefStem = normalizedHref.replace('.html', '');
 
-			// Direct filename match (handles spaces and special characters)
-			if (normalizedHref === normalizedCurrentFile) {
-				link.classList.add(CONFIG.nav.activeClass);
-				return;
-			}
+		// Direct filename match (handles spaces and special characters)
+		if (normalizedHref === normalizedCurrentFile) {
+			link.classList.add(CONFIG.nav.activeClass);
+			return;
+		}
 
-			// Stem match (handles .html extension variations)
-			const filePath = normalizedCurrentFile.replace('.html', '');
-			if (hrefStem === filePath) {
-				link.classList.add(CONFIG.nav.activeClass);
-			}
-		});
+		// Stem match (handles .html extension variations)
+		const filePath = normalizedCurrentFile.replace('.html', '');
+		if (hrefStem === filePath) {
+			link.classList.add(CONFIG.nav.activeClass);
+			return;
+		}
+
+		// Fallback: check if current path contains the link name (excluding index.html)
+		if (normalizedHref !== 'index.html' && currentPath.includes(hrefStem)) {
+			link.classList.add(CONFIG.nav.activeClass);
+		}
 	});
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initializeImageHandling);
-initializeNavigation();
-		}
-		// Fallback: check if current path contains the link name (excluding index.html)
-		else if (normalizedHref !== 'index.html' && currentPath.includes(hrefStem)) {
-			link.classList.add('current-page');
-		}
-	});
+document.addEventListener('DOMContentLoaded', function () {
+	initializeImageHandling();
+	initializeNavigation();
 });
