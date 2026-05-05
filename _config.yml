@@ -7,7 +7,9 @@ email: FoundationHauntedHouse@gmail.com
 
 # Build settings
 theme: null
-plugins: {}
+# Enable Jekyll plugins (jekyll-sitemap generates sitemap.xml automatically)
+plugins:
+  - jekyll-sitemap
 
 # Markdown processor
 markdown: kramdown
