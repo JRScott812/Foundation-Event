@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": "tab",
+    "no-descending-specificity": null,
+    "alpha-value-notation": null,
+    "hue-degree-notation": null
+  }
+}

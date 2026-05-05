@@ -1,0 +1,12 @@
+{
+  "extends": "htmlhint:recommended",
+  "rules": {
+    "attr-unsafe-chars": false,
+    "tag-pair": true,
+    "attr-no-duplication": true,
+    "doctype-first": false,
+    "id-unique": true,
+    "src-not-empty": true,
+    "title-require": true
+  }
+}
