@@ -1,0 +1,36 @@
+# Jekyll Configuration for Foundation Events
+title: Foundation Events
+description: Homepage for Foundation Events hosted at Samuel Morris Hall, Taylor University
+author: Foundation
+url: https://FoundationEvent.com
+email: FoundationHauntedHouse@gmail.com
+
+# Build settings
+theme: null
+plugins: []
+
+# Markdown processor
+markdown: kramdown
+
+# Exclude from processing
+exclude:
+  - .gitignore
+  - README.md
+  - .git/
+
+# Build directories
+source: .
+destination: _site
+
+# Collections
+collections_dir: .
+collections: {}
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      lang: "en"
