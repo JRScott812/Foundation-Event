@@ -29,8 +29,8 @@ collections: {}
 # Defaults
 defaults:
   - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-      lang: "en"
+	  path: ""
+	  type: "pages"
+	values:
+	  layout: "default"
+	  lang: "en"

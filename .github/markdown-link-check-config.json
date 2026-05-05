@@ -1,16 +1,16 @@
 {
   "ignorePatterns": [
-    {
-      "pattern": "^https://localhost"
-    },
-    {
-      "pattern": "^http://localhost"
-    }
+	{
+	  "pattern": "^https://localhost"
+	},
+	{
+	  "pattern": "^http://localhost"
+	}
   ],
   "replacementPatterns": [
-    {
-      "pattern": "^/",
-      "replacement": "https://foundationevent.com/"
-    }
+	{
+	  "pattern": "^/",
+	  "replacement": "https://foundationevent.com/"
+	}
   ]
 }

@@ -216,14 +216,14 @@ img {
 }
 
 /* Keep single images from stretching too wide */
-.image-row > .image-container:only-child {
+.image-row>.image-container:only-child {
 	flex: 0 1 420px;
 	max-width: 420px;
 	width: min(100%, 420px);
 	margin: 0;
 }
 
-.image-row > .image-container:only-child img {
+.image-row>.image-container:only-child img {
 	width: 100%;
 	height: auto;
 	max-height: 80vh;
@@ -531,7 +531,7 @@ img {
 		max-width: none;
 	}
 
-	.image-row > .image-container:only-child {
+	.image-row>.image-container:only-child {
 		max-width: 420px;
 		justify-self: center;
 	}
@@ -717,5 +717,4 @@ a:hover {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
-}
 }

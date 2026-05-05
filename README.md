@@ -1,8 +1,8 @@
 This is the GitHub repo for https://FoundationEvent.com.  It advertises the upcoming events on the floor.
 
 # How to maintain the events
-    - Write the _fancy_ date & time in the `<h3>` tag
-    - Write the **ugly** date & time format in the `<countdownDate>` tag
+	- Write the _fancy_ date & time in the `<h3>` tag
+	- Write the **ugly** date & time format in the `<countdownDate>` tag
 # Foundation Event Website
 - Update the event's info.
 This is the GitHub repository for [foundationevent.com](https://foundationevent.com), advertising upcoming Foundation events.
@@ -16,27 +16,27 @@ This is the GitHub repository for [foundationevent.com](https://foundationevent.
 ### Local Development
 
 1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/Foundation-Event.git
-    cd Foundation-Event
-    ```
+	```bash
+	git clone https://github.com/yourusername/Foundation-Event.git
+	cd Foundation-Event
+	```
 
 2. **Install dependencies:**
-    ```bash
-    bundle install
-    ```
+	```bash
+	bundle install
+	```
 
 3. **Build and serve locally:**
-    ```bash
-    bundle exec jekyll serve
-    ```
-    Visit `http://localhost:4000` in your browser.
+	```bash
+	bundle exec jekyll serve
+	```
+	Visit `http://localhost:4000` in your browser.
 
 4. **Build for production:**
-    ```bash
-    bundle exec jekyll build
-    ```
-    Output will be in the `_site/` directory.
+	```bash
+	bundle exec jekyll build
+	```
+	Output will be in the `_site/` directory.
 
 ## 📁 Project Structure
 
@@ -75,14 +75,14 @@ This is the GitHub repository for [foundationevent.com](https://foundationevent.
 Event details are managed in two places:
 
 1. **Event Pages** (HTML files like `5K.html`, `Haunted House.html`):
-    - Update the YAML frontmatter with page-specific metadata
-    - Modify event descriptions and details
-    - Set `include_countdown: true` if the event needs a countdown timer
+	- Update the YAML frontmatter with page-specific metadata
+	- Modify event descriptions and details
+	- Set `include_countdown: true` if the event needs a countdown timer
 
 2. **Centralized Configuration** (`_data/events.yml`):
-    - Update event name, date, slug, description, and countdown date
-    - Modify contact information and social media links
-    - Add or remove events from the events array
+	- Update event name, date, slug, description, and countdown date
+	- Modify contact information and social media links
+	- Add or remove events from the events array
 
 ### Update Countdown Date
 
@@ -110,43 +110,43 @@ countdown: {
 1. Create a folder in `Assets/` for your event
 2. Add poster images: `2025 EventName.png`, `2024 EventName.png`, etc.
 3. Update the `<img>` tags in the event's HTML file with proper alt text:
-    ```html
-    <img src="/Assets/5K/2025 5K.png" alt="2025 5K Event Poster" loading="lazy">
-    ```
+	```html
+	<img src="/Assets/5K/2025 5K.png" alt="2025 5K Event Poster" loading="lazy">
+	```
 
 ### Add a New Event
 
 1. **Create from template:**
-    Copy [Event Template.html](Event%20Template.html) and rename it (e.g., `New Event.html`)
+	Copy [Event Template.html](Event%20Template.html) and rename it (e.g., `New Event.html`)
 
 2. **Add YAML frontmatter:**
-    ```yaml
-    ---
-    layout: default
-    title: "emoji Event Name"
-    description: "Short description"
-    od_image: "/Assets/EventFolder/2025 EventName.png"
-    data_page: "event-slug"
-    include_countdown: true
-    ---
-    ```
+	```yaml
+	---
+	layout: default
+	title: "emoji Event Name"
+	description: "Short description"
+	od_image: "/Assets/EventFolder/2025 EventName.png"
+	data_page: "event-slug"
+	include_countdown: true
+	---
+	```
 
 3. **Update _data/events.yml:**
-    ```yaml
-    events:
-      - name: "Event Name"
-         slug: "event-slug"
-         emoji: "🎉"
-         page: "/EventName.html"
-         description: "Event description"
-         countdown_date: "2025-XX-XXT00:00:00Z"
-    ```
+	```yaml
+	events:
+	  - name: "Event Name"
+		 slug: "event-slug"
+		 emoji: "🎉"
+		 page: "/EventName.html"
+		 description: "Event description"
+		 countdown_date: "2025-XX-XXT00:00:00Z"
+	```
 
 4. **Add to navigation:**
-    Update `_includes/nav.html` to include your event link
+	Update `_includes/nav.html` to include your event link
 
 5. **Create Assets folder:**
-    Create `Assets/EventFolder/` and add your event's images
+	Create `Assets/EventFolder/` and add your event's images
 
 ## 🎨 Customization
 
@@ -170,12 +170,12 @@ Modify `config.js` to adjust countdown colors, timing, and behavior:
 const CONFIG = {
   fallbackImage: "/Assets/Foundation/Foundation Image Not Found.svg",
   countdown: {
-     colorScaleWindowMs: 30 * 24 * 60 * 60 * 1000,
-     startColor: { r: 34, g: 197, b: 94 },
-     endColor: { r: 239, g: 68, b: 68 }
+	 colorScaleWindowMs: 30 * 24 * 60 * 60 * 1000,
+	 startColor: { r: 34, g: 197, b: 94 },
+	 endColor: { r: 239, g: 68, b: 68 }
   },
   nav: {
-     activeClass: "current-page"
+	 activeClass: "current-page"
   }
 };
 ```
@@ -194,16 +194,16 @@ const CONFIG = {
 The repository includes automated workflows:
 
 1. **HTML Validation** (`.github/workflows/validate.yml`)
-    - Validates all HTML5 files on push/PR
-    - Runs on: `main` branch changes
+	- Validates all HTML5 files on push/PR
+	- Runs on: `main` branch changes
 
 2. **Link Checking** (`.github/workflows/link-check.yml`)
-    - Checks for broken links
-    - Runs weekly and on every push/PR
+	- Checks for broken links
+	- Runs weekly and on every push/PR
 
 3. **Lighthouse CI** (`.github/workflows/lighthouse.yml`)
-    - Measures performance, accessibility, and SEO
-    - Generates detailed reports on pull requests
+	- Measures performance, accessibility, and SEO
+	- Generates detailed reports on pull requests
 
 ## 📦 Deployment
 
@@ -234,6 +234,6 @@ For questions or issues, please open a GitHub issue or contact the maintainers.
 
 # Adding a new event
 - Use the [Event Template.html](<Event Template.html>) and copy it, and rename it to whatever the event will be.
-    - Edit the default details in the file.
-    - Name, Date, Time, Details, etc...
+	- Edit the default details in the file.
+	- Name, Date, Time, Details, etc...
 - Create a new folder in the [Assets](Assets/) folder for the event's images.

@@ -5,9 +5,38 @@ description: "Details about the Foundation Event, including date, registration, 
 keywords: "Foundation Event, Foundation 5K, 5K, Event Details"
 og_title: "Foundation 5K"
 og_description: "A 5K run hosted by Foundation."
+og_image: "/Assets/5K/2026_5K.png"
 data_page: "5k"
 include_countdown: true
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Foundation 5K",
+  "description": "5K run/walk/jog at Samuel Morris Hall benefiting The Red Barn afterschool program",
+  "image": "https://foundationevent.com/Assets/5K/2026_5K.png",
+  "location": {
+	"@type": "Place",
+	"name": "Samuel Morris Hall",
+	"address": {
+	  "@type": "PostalAddress",
+	  "streetAddress": "1748 Vayhinger Loop",
+	  "addressLocality": "Upland",
+	  "addressRegion": "IN",
+	  "postalCode": "46989",
+	  "addressCountry": "US"
+	}
+  },
+  "organizer": {
+	"@type": "Organization",
+	"name": "Foundation",
+	"url": "https://foundationevent.com"
+  },
+  "eventStatus": "https://schema.org/EventScheduled"
+}
+</script>
 
 <section class="main-content">
 	<!--<img src="/Assets/5K/2026 5K.png" alt="next 5K Poster" id="current-event-poster"
@@ -19,7 +48,7 @@ include_countdown: true
 			<h2></h2>
 			<time id="countdown-date"></time>
 			<h3>Countdown:</h3>
-			<h3 id="countdown"></h3>
+			<h3 id="countdown" aria-label="Countdown timer" aria-live="polite"></h3>
 		</section>
 
 		<section id="details">
@@ -42,12 +71,12 @@ include_countdown: true
 </section>
 
 <h2>Sponsors:</h2>
-<p><a href="/Contact Us.html">Contact Foundation</a> if you are interested in sponsoring the 5K.</p>
+<p><a href="/Contact%20Us.html">Contact Foundation</a> if you are interested in sponsoring the 5K.</p>
 <div class="image-row">
 	<figure class="image-container">
-		<figcaption>The Red Barn</figcaption>
+		<figcaption>The Red Barn - Supporting Youth Through Afterschool Programs</figcaption>
 		<img src="https://static.wixstatic.com/media/c61fdb_233b4d2d62844503a928e87d065a5852~mv2.jpg"
-			alt="The Red Barn Logo" loading="lazy">
+			alt="The Red Barn Afterschool Program Logo" loading="lazy">
 	</figure>
 </div>
 
@@ -56,15 +85,15 @@ include_countdown: true
 	<div class="image-row">
 		<figure class="image-container">
 			<figcaption>2026</figcaption>
-			<img src="/Assets/5K/2026 5K.png" alt="2026 Foundation 5K Poster" loading="lazy">
+			<img src="/Assets/5K/2026 5K.png" alt="2026 Foundation 5K Event Poster" loading="lazy">
 		</figure>
 		<figure class="image-container">
 			<figcaption>2025</figcaption>
-			<img src="/Assets/5K/Foundation 5k Poster.png" alt="2025 Foundation 5K Poster" loading="lazy">
+			<img src="/Assets/5K/Foundation 5k Poster.png" alt="2025 Foundation 5K Event Poster" loading="lazy">
 		</figure>
 		<figure class="image-container">
 			<figcaption>2024</figcaption>
-			<img src="/Assets/5K/2024 5K.png" alt="2024 Foundation 5K Poster" loading="lazy">
+			<img src="/Assets/5K/2024 5K.png" alt="2024 Foundation 5K Event Poster" loading="lazy">
 		</figure>
 	</div>
 </section>
