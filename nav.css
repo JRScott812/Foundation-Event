@@ -231,7 +231,6 @@ nav a.current-page::after {
 
 /* Address block */
 .footer-address {
-	flex: 1;
 	font-style: normal;
 	line-height: 1.45;
 	color: rgba(255, 255, 255, 0.9);
@@ -257,12 +256,6 @@ nav a.current-page::after {
 	transform: translateY(-2px);
 }
 
-/* Contact info */
-.footer-contact {
-	text-align: right;
-	line-height: 1.6;
-}
-
 /* Copyright / small print */
 .footer-copy {
 	width: 100%;
@@ -270,6 +263,7 @@ nav a.current-page::after {
 	opacity: 0.8;
 	font-size: 0.85rem;
 	text-align: center;
+	order: 3;
 }
 
 /* Layout adjustments for small screens */
