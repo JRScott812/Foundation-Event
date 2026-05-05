@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /_layouts/
+Disallow: /_includes/
+Disallow: /_data/
+Disallow: /_site/
+
+Sitemap: https://foundationevent.com/sitemap.xml
