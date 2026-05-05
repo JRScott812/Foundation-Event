@@ -19,6 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
+          LINTER_RULES_PATH: .github/linters
           VALIDATE_ALL_CODEBASE: true
           # Exclude large asset folders and generated site
           FILTER_REGEX_EXCLUDE: '(^Assets/|^_site/|^\.git/)'

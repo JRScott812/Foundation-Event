@@ -40,7 +40,7 @@ This is the GitHub repository for [foundationevent.com](https://foundationevent.
 
 ## 📁 Project Structure
 
-```
+```text
 .
 ├── _config.yml              # Jekyll configuration
 ├── _layouts/
@@ -117,19 +117,19 @@ countdown: {
 ### Add a New Event
 
 1. **Create from template:**
-	Copy [Event Template.html](Event%20Template.html) and rename it (e.g., `New Event.html`)
+   Copy [Event Template.html](Event%20Template.html) and rename it (e.g., `New Event.html`)
 
 2. **Add YAML frontmatter:**
-	```yaml
-	---
-	layout: default
-	title: "emoji Event Name"
-	description: "Short description"
-	od_image: "/Assets/EventFolder/2025 EventName.png"
-	data_page: "event-slug"
-	include_countdown: true
-	---
-	```
+   ```yaml
+   ---
+   layout: default
+   title: "emoji Event Name"
+   description: "Short description"
+   od_image: "/Assets/EventFolder/2025 EventName.png"
+   data_page: "event-slug"
+   include_countdown: true
+   ---
+   ```
 
 3. **Update _data/events.yml:**
 	```yaml
@@ -234,6 +234,6 @@ For questions or issues, please open a GitHub issue or contact the maintainers.
 
 # Adding a new event
 - Use the [Event Template.html](<Event Template.html>) and copy it, and rename it to whatever the event will be.
-	- Edit the default details in the file.
-	- Name, Date, Time, Details, etc...
+  - Edit the default details in the file.
+  - Name, Date, Time, Details, etc...
 - Create a new folder in the [Assets](Assets/) folder for the event's images.
