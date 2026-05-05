@@ -1,0 +1,9 @@
+# Super-Linter configuration file
+# See: https://github.com/github/super-linter
+# This file keeps default rules; add or disable linters as needed.
+# Example: disable specific linters by name under 'disabled_linters'
+# disabled_linters:
+#   - eslint
+
+# Use standard config locations where possible
+# Custom rules can be added per linter if needed
