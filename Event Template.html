@@ -1,117 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: "📅 Event"
+description: "Details about the Foundation Event, including date, registration, and previous events."
+keywords: "Foundation Event, Event Details"
+og_title: "Event"
+og_description: "Here is where to put a short preview description of the event."
+og_image: "/Assets/Foundation/Foundation%20Logo%20Simple.svg"
+data_page: "event"
+include_countdown: true
+---
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="main-content">
+	<img src="" alt="next Event Poster" id="current-event-poster" class="main-image">
+	<div class="main-text">
+		<h1>Event Name <eventIcon></eventIcon></h1>
 
-	<!-- Cache Control -->
-	<meta http-equiv="Cache-Control" content="public, max-age=31536000">
-
-	<meta name="description"
-		content="Details about the Foundation Event, including date, registration, and previous events.">
-	<meta name="keywords" content="Foundation Event, Event Details">
-	<meta name="author" content="Foundation">
-	<meta name="robots" content="index, follow">
-
-	<!--Preview Stuff-->
-	<meta property="og:title" content="Event">
-	<meta property="og:description" content="Here is where to put a short preview description of the event.">
-	<meta property="og:image" content=""> <!--Put the current event poster here-->
-	<meta property="og:url" content="https://FoundationEvent.com/Event.html">
-	<meta property="og:site_name" content="Foundation Event">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="general.css">
-	<link rel="stylesheet" href="nav.css">
-	<link rel="stylesheet" href="image-row.css">
-
-	<link rel="icon" type="image/svg+xml" href="Assets/Foundation/Foundation%20Logo%20Simple.svg">
-
-	<script src="Countdown.js" defer></script>
-	<script src="Helper.js" defer></script>
-
-	<title>📅 Event</title>
-</head>
-
-<body>
-	<header class="site-header" role="banner">
-		<a class="skip-link" href="#main-content">Skip to content</a>
-		<div class="header-inner">
-			<nav aria-label="Main navigation">
-				<ul>
-					<li><a href="index.html" title="Home">🪏 Home</a></li>
-					<li><a href="Haunted%20House.html" title="Haunted House">🎃 Haunted House</a></li>
-					<li><a href="Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
-					<li><a href="5K.html" title="5K">🏃 Foundation 5K</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<main id="main-content">
-		<section class="main-content">
-			<img src="" alt="next Event Poster" id="current-event-poster" class="main-image">
-			<div class="main-text">
-				<h1>Event Name <eventIcon></eventIcon>
-				</h1>
-
-				<section id="date">
-					<h2>Date of the Event</h2>
-					<time id="countdown-date"></time>
-					<h3>Countdown:</h3>
-					<h3 id="countdown"></h3>
-				</section>
-
-				<section id="details">
-					<p>Details about the event.</p>
-				</section>
-			</div>
+		<section id="date">
+			<h2>Date of the Event</h2>
+			<time id="countdown-date"></time>
+			<h3>Countdown:</h3>
+			<h3 id="countdown"></h3>
 		</section>
 
-		<section id="registration">
-			<h3>Registration Info.</h3>
+		<section id="details">
+			<p>Details about the event.</p>
 		</section>
+	</div>
+</section>
 
-		<section id="previous-events">
-			<h2>Previous Events:</h2>
-			<div class="image-row">
-				<figure class="image-container">
-					<figcaption>Previous Event Year</figcaption>
-					<img src="" alt="Previous Event Year Poster">
-				</figure>
-			</div>
-		</section>
-	</main>
+<section id="registration">
+	<h3>Registration Info.</h3>
+</section>
 
-	<footer class="site-footer" role="contentinfo">
-		<div class="footer-inner">
-			<nav class="footer-nav" aria-label="Footer navigation">
-				<a href="Privacy%20Policy.html">🔒 Privacy Policy</a>
-				<a href="Terms%20%26%20Conditions.html">📃 Terms & Conditions</a>
-				<a href="About%20Us.html">❓About Us</a>
-				<a href="Contact%20Us.html">💬 Contact Us</a>
-			</nav>
-
-			<address class="footer-address">
-				<strong>Foundation</strong> Samuel Morris Hall: 1748 Vayhinger Loop, Upland, IN 46989
-			</address>
-
-			<div class="footer-social" aria-label="Social links">
-				<a href="https://www.instagram.com/foundation_tayloru/" target="_blank" rel="noopener noreferrer"
-					title="Follow Foundation on Instagram">📸 Instagram</a>
-			</div>
-
-			<small class="footer-copy">&copy; 2026 Foundation. All rights reserved.</small>
-			<div class="footer-contact">
-				📞 <a href="tel:+17656685706" title="Call Foundation">+1 (765) 998-5706</a> • 📧 <a
-					href="mailto:FoundationHauntedHouse@gmail.com"
-					title="Email Foundation">FoundationHauntedHouse@gmail.com</a>
-			</div>
-		</div>
-	</footer>
-</body>
-
-</html>
+<section id="previous-events">
+	<h2>Previous Events:</h2>
+	<div class="image-row">
+		<figure class="image-container">
+			<figcaption>Previous Event Year</figcaption>
+			<img src="" alt="Previous Event Year Poster">
+		</figure>
+	</div>
+</section>
