@@ -58,14 +58,14 @@ This is the GitHub repository for [foundationevent.com](https://foundationevent.
 ├── config.js               # Centralized JavaScript configuration
 ├── Helper.js               # Image fallbacks & nav highlighting
 ├── Countdown.js            # Event countdown timer
-├── index.html              # Homepage
-├── 5K.html                 # 5K Run event page
-├── Haunted House.html      # Haunted House event page
-├── Parade.html             # Thanksgiving Parade event page
-├── Contact Us.html         # Contact page
-├── About Us.html           # About page
-├── Privacy Policy.html     # Privacy policy
-└── Terms & Conditions.html # Terms page
+├── index.md                # Homepage
+├── 5K.md                   # 5K Run event page
+├── Haunted House.md        # Haunted House event page
+├── Parade.md               # Thanksgiving Parade event page
+├── Contact Us.md           # Contact page
+├── About Us.md             # About page
+├── Privacy Policy.md       # Privacy policy
+└── Terms & Conditions.md   # Terms page
 ```
 
 ## 🔧 How to Maintain Events
@@ -74,7 +74,7 @@ This is the GitHub repository for [foundationevent.com](https://foundationevent.
 
 Event details are managed in two places:
 
-1. **Event Pages** (HTML files like `5K.html`, `Haunted House.html`):
+1. **Event Pages** (Markdown files like `5K.md`, `Haunted House.md`):
 	- Update the YAML frontmatter with page-specific metadata
 	- Modify event descriptions and details
 	- Set `include_countdown: true` if the event needs a countdown timer
@@ -117,7 +117,7 @@ countdown: {
 ### Add a New Event
 
 1. **Create from template:**
-   Copy [Event Template.html](Event%20Template.html) and rename it (e.g., `New Event.html`)
+   Copy [Event Template.md](Event%20Template.md) and rename it (e.g., `New Event.md`)
 
 2. **Add YAML frontmatter:**
    ```yaml
@@ -125,7 +125,7 @@ countdown: {
    layout: default
    title: "emoji Event Name"
    description: "Short description"
-   od_image: "/Assets/EventFolder/2025 EventName.png"
+   og_image: "/Assets/EventFolder/2025 EventName.png"
    data_page: "event-slug"
    include_countdown: true
    ---
@@ -137,7 +137,7 @@ countdown: {
 	  - name: "Event Name"
 		 slug: "event-slug"
 		 emoji: "🎉"
-		 page: "/EventName.html"
+		 page: "/Event Name"
 		 description: "Event description"
 		 countdown_date: "2025-XX-XXT00:00:00Z"
 	```

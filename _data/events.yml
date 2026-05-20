@@ -3,7 +3,7 @@ events:
   - name: "Haunted House"
     slug: "haunted-house"
     emoji: "🎃"
-    page: "/Haunted House.html"
+    page: "/Haunted House"
     description: "A themed Haunted House in the basement of Samuel Morris Hall."
     date_message: "" # Set when date is announced
     countdown_date: "" # ISO 8601 format: YYYY-MM-DDTHH:mm:ss
@@ -11,7 +11,7 @@ events:
   - name: "Thanksgiving Parade"
     slug: "parade"
     emoji: "🦃"
-    page: "/Parade.html"
+    page: "/Parade"
     description: "Parade through the Southside of Samuel Morris Hall with various acts and entertainment."
     date_message: ""
     countdown_date: ""
@@ -19,7 +19,7 @@ events:
   - name: "Foundation 5K"
     slug: "5k"
     emoji: "🏃"
-    page: "/5K.html"
+    page: "/5K"
     description: "5K run/walk/jog benefiting The Red Barn afterschool program."
     date_message: ""
     countdown_date: ""
