@@ -1,0 +1,10 @@
+{% assign event_datetime = page.event_datetime | default: page.countdown_datetime %}
+{% if event_datetime %}
+<section id="date">
+	<time id="countdown-date" datetime="{{ event_datetime }}">
+		{{ page.countdown_label | default: event_datetime }}
+	</time>
+	<p class="countdown-label">Countdown:</p>
+	<output id="countdown" aria-label="Countdown timer" aria-live="polite"></output>
+</section>
+{% endif %}

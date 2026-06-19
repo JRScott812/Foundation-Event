@@ -5,10 +5,14 @@
 	  "numberOfRuns": 1,
 	  "url": [
 		"http://localhost/index.html",
-		"http://localhost/5K.html",
-		"http://localhost/Haunted%20House.html",
-		"http://localhost/Parade.html",
-		"http://localhost/Contact%20Us.html"
+		"http://localhost/Events/5K/index.html",
+		"http://localhost/Events/Haunted-House/index.html",
+		"http://localhost/Events/Parade/index.html",
+		"http://localhost/Contact-Us/index.html",
+		"http://localhost/About-Us/index.html",
+		"http://localhost/Legal/Privacy-Policy/index.html",
+		"http://localhost/Legal/Terms-and-Conditions/index.html",
+		"http://localhost/404.html"
 	  ]
 	},
 	"upload": {

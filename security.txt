@@ -1,0 +1,8 @@
+---
+layout: null
+permalink: /.well-known/security.txt
+sitemap: false
+---
+Contact: mailto:FoundationHauntedHouse@gmail.com
+Preferred-Languages: en
+Canonical: {{ site.url }}/.well-known/security.txt

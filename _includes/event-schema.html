@@ -1,0 +1,30 @@
+{% assign event_datetime = page.event_datetime | default: page.countdown_datetime %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.event_name | default: page.heading | default: page.title | jsonify }},
+  "description": {{ page.event_description | default: page.description | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  {% if page.og_image %}"image": "{{ site.url }}{{ page.og_image | uri_escape }}",{% endif %}
+  {% if event_datetime %}"startDate": "{{ event_datetime }}",{% endif %}
+  "location": {
+    "@type": "Place",
+    "name": "Samuel Morris Hall",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1748 Vayhinger Loop",
+      "addressLocality": "Upland",
+      "addressRegion": "IN",
+      "postalCode": "46989",
+      "addressCountry": "US"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ site.data.events.contact.organization | jsonify }},
+    "url": "{{ site.url }}"
+  },
+  "eventStatus": "https://schema.org/EventScheduled"
+}
+</script>

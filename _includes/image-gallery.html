@@ -1,0 +1,8 @@
+<div class="image-row">
+	{% for item in include.items %}
+	<figure class="image-container">
+		<figcaption>{{ item.year | default: item.caption }}</figcaption>
+		<img src="{{ item.src | uri_escape }}" alt="{{ item.alt | escape }}" loading="lazy">
+	</figure>
+	{% endfor %}
+</div>

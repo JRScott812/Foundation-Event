@@ -1,8 +1,10 @@
+---
+layout: null
+permalink: /robots.txt
+sitemap: false
+---
 User-agent: *
 Allow: /
-Disallow: /_layouts/
-Disallow: /_includes/
-Disallow: /_data/
-Disallow: /_site/
+Disallow: /404.html
 
-Sitemap: https://foundationevent.com/sitemap.xml
+Sitemap: {{ site.url }}/sitemap.xml

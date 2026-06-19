@@ -2,37 +2,53 @@
 title: Foundation Events
 description: Homepage for Foundation Events hosted at Samuel Morris Hall, Taylor University
 author: Foundation
-url: https://FoundationEvent.com
+url: https://foundationevent.com
 email: FoundationHauntedHouse@gmail.com
 
-# Build settings
 theme: null
-# Enable Jekyll plugins (jekyll-sitemap generates sitemap.xml automatically)
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
-# Markdown processor
 markdown: kramdown
 
-# Exclude from processing
 exclude:
   - .gitignore
   - README.md
   - .git/
+  - "Page Template.md"
+  - "Events/Event Template.md"
 
-# Build directories
 source: .
 destination: _site
 
-# Collections
 collections_dir: .
 collections: {}
 
-# Defaults
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
       lang: "en"
+  - scope:
+      path: "Page Template.md"
+      type: "pages"
+    values:
+      sitemap: false
+  - scope:
+      path: "404.md"
+      type: "pages"
+    values:
+      sitemap: false
+  - scope:
+      path: "Events/Event Template.md"
+      type: "pages"
+    values:
+      sitemap: false
+  - scope:
+      path: "Events"
+      type: "pages"
+    values:
+      layout: "event"

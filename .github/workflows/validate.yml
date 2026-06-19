@@ -4,10 +4,26 @@ name: HTML Validation
 on:
   push:
     branches: [main]
-    paths: [ '**.html', '.github/workflows/validate.yml' ]
+    paths:
+      - '**.md'
+      - '**.html'
+      - '_config.yml'
+      - '_data/**'
+      - '_layouts/**'
+      - '_includes/**'
+      - 'robots.txt'
+      - '.github/workflows/validate.yml'
   pull_request:
-    branches: [ main ]
-    paths: [ '**.html', '.github/workflows/validate.yml' ]
+    branches: [main]
+    paths:
+      - '**.md'
+      - '**.html'
+      - '_config.yml'
+      - '_data/**'
+      - '_layouts/**'
+      - '_includes/**'
+      - 'robots.txt'
+      - '.github/workflows/validate.yml'
 
 jobs:
   validate:
@@ -15,8 +31,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate HTML
-        uses: Cyb3r-Jak3/html5-validator-action@master
+      - uses: ruby/setup-ruby@v1
         with:
-          root: .
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Verify sitemap and robots
+        run: |
+          test -f _site/sitemap.xml
+          test -f _site/robots.txt
+          grep -q 'sitemap.xml' _site/robots.txt
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5-validator-action@v1.4.0
+        with:
+          root: _site
           extra: --ignore="Duplicate ID|Bad value|Duplicate name"

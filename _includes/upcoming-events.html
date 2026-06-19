@@ -1,0 +1,29 @@
+{% assign next_slug = site.data.events.next_event %}
+<section class="upcoming-events">
+	{% if next_slug != nil and next_slug != "" %}
+	<h2>Next event:</h2>
+	{% assign next_found = false %}
+	{% for event in site.data.events.events %}
+		{% include resolve-event-page.html page=event.page %}
+		{% if event_page.data_page == next_slug %}
+			{% assign next_found = true %}
+			{% assign event_datetime = event_page.event_datetime | default: event_page.countdown_datetime %}
+			<p class="event-link event-link--featured">
+				<a href="{{ event.page | uri_escape }}" title="{{ event.name | escape }}">{% include event-icon.html page=event.page %}{{ event.name }} →</a>
+			</p>
+			{% if event_datetime %}
+			<p class="event-date"><time datetime="{{ event_datetime }}">{{ event_page.countdown_label | default: event_datetime }}</time></p>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	{% unless next_found %}
+	<p class="status-note">The featured event could not be found. Check <code>next_event</code> in <code>_data/events.yml</code>.</p>
+	{% endunless %}
+	{% else %}
+	<h2>Upcoming event(s):</h2>
+	{% for event in site.data.events.events %}
+	<p class="event-link"><a href="{{ event.page | uri_escape }}" title="{{ event.name | escape }}">{% include event-icon.html page=event.page %}{{ event.name }} →</a></p>
+	{% endfor %}
+	{% endif %}
+	<p class="status-note">Event dates are announced on each event page when confirmed.</p>
+</section>

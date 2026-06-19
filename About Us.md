@@ -1,33 +1,33 @@
 ---
-layout: default
-title: "❓ About Us"
+layout: page
+permalink: /About-Us/
+redirect_from:
+  - "/About Us.html"
+  - "/About Us/"
+  - "/About Us"
+  - /About%20Us.html
+  - /About%20Us/
+  - /About%20Us
+emoji: "❓"
+title: "About Us"
 description: "Details about the Foundation."
 keywords: "Foundation Event, Event Details"
 og_title: "About Foundation"
 og_description: "Info about Foundation."
+og_image: "/Assets/Foundation/Foundation Logo Simple.svg"
 data_page: "about"
 ---
 
-<section class="main-content">
-	<div class="main-text">
-		<h1>❓ About Us</h1>
-		<h2>🐻🪏</h2>
-		<h3>"Not a class & more than a hallway."</h3>
-		<h4>Foundation<del style="color: red;">s</del> (FDN) is the 1st floor of
-			<a href="https://www.taylor.edu/life-at-taylor/residence-life/residence-halls/samuel-morris-hall">
-				Samuel Morris Hall</a> at <a href="https://www.taylor.edu/">Taylor University</a>.
-		</h4>
-		<blockquote>
-			"And so I tell you, Peter: you are a rock, and on this rock foundation I will build my church, and
-			not even death
-			will ever be able to overcome it."<br>
-			- <b>Matthew 16:18</b> (<i>Good News Translation</i>)
-		</blockquote>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.762586098919!2d-85.49762952404997!3d40.45858615309087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881504239c82f13b%3A0x8fca221b0b68a385!2sSamuel%20Morris%20Hall!5e1!3m2!1sen!2sus!4v1772409274833!5m2!1sen!2sus"
-			width="600" height="450" style="border:0; max-width: 100%;" allowfullscreen loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade" title="Map to Samuel Morris Hall">
-		</iframe>
-		<p><i>This website is created & maintained by Jake Scott.</i></p>
-	</div>
-</section>
+## 🐻🪏
+
+### "Not a class & more than a hallway."
+
+Foundation~~s~~ (FDN) is the 1st floor of [Samuel Morris Hall](https://www.taylor.edu/life-at-taylor/residence-life/residence-halls/samuel-morris-hall) at [Taylor University](https://www.taylor.edu/).
+
+> "And so I tell you, Peter: you are a rock, and on this rock foundation I will build my church, and not even death will ever be able to overcome it."
+>
+> — **Matthew 16:18** (*Good News Translation*)
+
+{% include samuel-morris-map.html %}
+
+*This website is created & maintained by Jake Scott.*

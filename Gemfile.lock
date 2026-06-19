@@ -12,9 +12,13 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    ffi (1.17.4-x64-mingw-ucrt)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
     forwardable-extended (2.6.0)
+    google-protobuf (4.34.1-x64-mingw-ucrt)
+      bigdecimal
+      rake (~> 13.3)
     google-protobuf (4.34.1-x86_64-linux-gnu)
       bigdecimal
       rake (~> 13.3)
@@ -43,6 +47,8 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-redirect-from (0.16.0)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
     jekyll-sitemap (1.4.0)
@@ -71,6 +77,8 @@ GEM
     rexml (3.4.4)
     rouge (4.7.0)
     safe_yaml (1.0.5)
+    sass-embedded (1.99.0-x64-mingw-ucrt)
+      google-protobuf (~> 4.31)
     sass-embedded (1.99.0-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
     sass-embedded (1.99.0-x86_64-linux-musl)
@@ -81,6 +89,7 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
   x86_64-linux-musl
 
@@ -89,6 +98,7 @@ DEPENDENCIES
   bigdecimal
   csv
   jekyll (~> 4.4)
+  jekyll-redirect-from
   jekyll-sitemap
 
 BUNDLED WITH

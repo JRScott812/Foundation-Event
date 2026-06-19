@@ -1,23 +1,16 @@
 ---
-layout: default
-title: "🪏 Foundation Events -- Samuel Morris Hall"
+layout: page
+emoji: "🪏"
+title: "Foundation Events -- Samuel Morris Hall"
+heading: "Foundation Events"
 description: "Homepage for Foundation Events."
 keywords: "Foundation Event, Event Details"
 og_title: "Foundation Events"
+og_description: "Homepage for Foundation Events at Samuel Morris Hall, Taylor University."
 og_image: "/Assets/Foundation/Foundation Logo Simple.svg"
 data_page: "home"
+hero_image: "/Assets/Foundation/Foundation Logo.svg"
+hero_alt: "Foundation Logo"
 ---
 
-<section class="main-content">
-	<img src="/Assets/Foundation/Foundation%20Logo.svg" alt="Foundation Logo" class="main-image" />
-	<div class="main-text">
-		<h1>🪏 Foundation Events</h1>
-		<div>
-			<h2>Upcoming event(s):</h2>
-			<!--<h3><a href="/Haunted House.html" title="Haunted House">🎃 Haunted House →</a></h3>-->
-			<!--<h3><a href="/Parade.html" title="Thanksgiving Parade">🦃 Thanksgiving Parade →</a></h3>-->
-			<!--<h3><a href="/5K.html" title="5K">🏃 Foundation 5K</a></h3>-->
-			<h3 style="color: red;">No upcoming events</h3>
-		</div>
-	</div>
-</section>
+{% include upcoming-events.html %}

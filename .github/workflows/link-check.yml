@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sunday
+    - cron: '0 0 * * 0'
 
 jobs:
   linkCheck:
@@ -15,14 +15,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check links
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Check markdown links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: yes
           use-verbose-mode: yes
           config-file: '.github/markdown-link-check-config.json'
 
-      - name: Validate HTML links
-        uses: tsnolan23/html-link-checker@v1
+      - name: Validate built HTML links
+        uses: lycheeverse/lychee-action@v2
         with:
-          root: .
+          args: --base https://foundationevent.com --verbose --no-progress '_site/**/*.html'
+          fail: true

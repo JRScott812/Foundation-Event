@@ -1,0 +1,22 @@
+---
+layout: page
+---
+		{% assign event_datetime = page.event_datetime | default: page.countdown_datetime %}
+		{% if event_datetime %}{% include countdown-section.html %}{% endif %}
+<section id="details">{{ content }}</section>
+{% if page.registration %}
+<section id="registration">{{ page.registration | markdownify }}</section>
+{% endif %}
+{% if page.sponsors %}
+<section id="sponsors">
+	<h2>{{ page.sponsors_title | default: 'Sponsors:' }}</h2>
+	{% if page.sponsors_intro %}{{ page.sponsors_intro | markdownify }}{% endif %}
+	{% include image-gallery.html items=page.sponsors %}
+</section>
+{% endif %}
+{% if page.previous_events %}
+<section id="previous-events">
+	<h2>{{ page.previous_events_title }}</h2>
+	{% include image-gallery.html items=page.previous_events %}
+</section>
+{% endif %}

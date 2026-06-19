@@ -1,4 +1,5 @@
 <script src="/Helper.js" type="module"></script>
-{% if page.include_countdown %}
+{% assign event_datetime = page.event_datetime | default: page.countdown_datetime %}
+{% if event_datetime %}
 <script src="/Countdown.js" type="module"></script>
 {% endif %}

@@ -1,40 +1,25 @@
----
 events:
   - name: "Haunted House"
-    slug: "haunted-house"
-    emoji: "🎃"
-    page: "/Haunted House"
-    description: "A themed Haunted House in the basement of Samuel Morris Hall."
-    date_message: "" # Set when date is announced
-    countdown_date: "" # ISO 8601 format: YYYY-MM-DDTHH:mm:ss
+    page: "/Events/Haunted-House"
 
   - name: "Thanksgiving Parade"
-    slug: "parade"
-    emoji: "🦃"
-    page: "/Parade"
-    description: "Parade through the Southside of Samuel Morris Hall with various acts and entertainment."
-    date_message: ""
-    countdown_date: ""
+    page: "/Events/Parade"
 
   - name: "Foundation 5K"
-    slug: "5k"
-    emoji: "🏃"
-    page: "/5K"
-    description: "5K run/walk/jog benefiting The Red Barn afterschool program."
-    date_message: ""
-    countdown_date: ""
+    page: "/Events/5K"
 
-# Site contact information
+# Set to an event page's data_page value to feature one event on the homepage (e.g. "5k").
+# Leave empty to list all events.
+next_event: ""
+
 contact:
   organization: "Foundation"
   address: "Samuel Morris Hall: 1748 Vayhinger Loop, Upland, IN 46989"
   phone: "+1 (765) 998-5706"
+  phone_tel: "+17659985706"
   email: "FoundationHauntedHouse@gmail.com"
-  instagram: "foundation_tayloru"
 
-# Social links
 social:
-  - platform: "instagram"
-    icon: "📸"
+  - icon: "📸"
     name: "Instagram"
     url: "https://www.instagram.com/foundation_tayloru/"

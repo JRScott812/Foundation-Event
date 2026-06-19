@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="main-content">
+	{% assign hero_src = page.hero_image | default: page.event_poster %}
+	{% if hero_src %}
+	<img src="{{ hero_src | uri_escape }}"
+		alt="{{ page.hero_alt | default: page.event_poster_alt | default: page.title | escape }}"
+		{% if page.event_poster %}id="current-event-poster" {% endif %}class="main-image">
+	{% endif %}
+	<div class="main-text">
+		<h1>{% if page.emoji %}<span aria-hidden="true">{{ page.emoji }}</span> {% endif %}{{ page.heading | default: page.title }}</h1>
+		{{ content }}
+	</div>
+</section>

@@ -1,0 +1,12 @@
+{% assign contact = site.data.events.contact %}
+<p{% if include.class %} class="{{ include.class }}"{% endif %}>
+	<span aria-hidden="true">📞</span>
+	<a href="tel:{{ contact.phone_tel }}" title="Call Foundation">{{ contact.phone }}</a>
+	{% if include.stacked %}
+	<br>
+	{% else %}
+	<span class="footer-sep" aria-hidden="true">·</span>
+	{% endif %}
+	<span aria-hidden="true">📧</span>
+	<a href="mailto:{{ contact.email }}" title="Email Foundation">{{ contact.email }}</a>
+</p>

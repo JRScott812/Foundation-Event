@@ -1,239 +1,124 @@
-This is the GitHub repo for https://FoundationEvent.com.  It advertises the upcoming events on the floor.
+# Foundation Events Website
 
-# How to maintain the events
-	- Write the _fancy_ date & time in the `<h3>` tag
-	- Write the **ugly** date & time format in the `<countdownDate>` tag
-# Foundation Event Website
-- Update the event's info.
-This is the GitHub repository for [foundationevent.com](https://foundationevent.com), advertising upcoming Foundation events.
+Static site for Foundation Events at Samuel Morris Hall (Taylor University), built with [Jekyll 4.4](https://jekyllrb.com/) and deployed to GitHub Pages at [foundationevent.com](https://foundationevent.com).
 
-## 🚀 Getting Started
+## Local development
 
-### Prerequisites
-- Ruby 2.7+ (for local Jekyll development)
-- Bundler: `gem install bundler`
-
-### Local Development
-
-1. **Clone the repository:**
-	```bash
-	git clone https://github.com/yourusername/Foundation-Event.git
-	cd Foundation-Event
-	```
-
-2. **Install dependencies:**
-	```bash
-	bundle install
-	```
-
-3. **Build and serve locally:**
-	```bash
-	bundle exec jekyll serve
-	```
-	Visit `http://localhost:4000` in your browser.
-
-4. **Build for production:**
-	```bash
-	bundle exec jekyll build
-	```
-	Output will be in the `_site/` directory.
-
-## 📁 Project Structure
-
-```text
-.
-├── _config.yml              # Jekyll configuration
-├── _layouts/
-│   └── default.html         # Master page template
-├── _includes/               # Reusable template partials
-│   ├── head.html           # Meta tags, stylesheets
-│   ├── nav.html            # Navigation menu
-│   ├── footer.html         # Site footer
-│   ├── scripts.html        # Script loading
-│   └── skip-link.html      # Accessibility skip link
-├── _data/
-│   └── events.yml          # Centralized event configuration
-├── Assets/                  # Event-specific images and media
-├── general.css             # Single consolidated stylesheet
-├── config.js               # Centralized JavaScript configuration
-├── Helper.js               # Image fallbacks & nav highlighting
-├── Countdown.js            # Event countdown timer
-├── index.md                # Homepage
-├── 5K.md                   # 5K Run event page
-├── Haunted House.md        # Haunted House event page
-├── Parade.md               # Thanksgiving Parade event page
-├── Contact Us.md           # Contact page
-├── About Us.md             # About page
-├── Privacy Policy.md       # Privacy policy
-└── Terms & Conditions.md   # Terms page
+```bash
+bundle install
+$env:JEKYLL_ENV="production"; bundle exec jekyll serve
 ```
 
-## 🔧 How to Maintain Events
+Visit `http://localhost:4000`. Use `--url https://foundationevent.com` so sitemap, robots, Open Graph, and canonical URLs match production.
 
-### Update Event Information
+## Site structure
 
-Event details are managed in two places:
+```
+├── _config.yml           # Jekyll config, plugins, page defaults
+├── _data/events.yml      # Nav events + contact/social info
+├── _includes/            # Reusable HTML partials
+├── _layouts/             # default.html, page.html, event.html
+├── Page Template.md      # Starter for general pages
+├── Events/               # Event pages (under /Events/…)
+├── Legal/                # Privacy Policy, Terms (under /Legal/…)
+├── Assets/               # Images and SVGs
+├── *.md                  # Site pages
+├── general.css / nav.css # Stylesheets
+├── config.js             # Shared JS settings
+├── Helper.js             # Image fallbacks, nav highlighting
+└── Countdown.js          # Opt-in event countdown
+```
 
-1. **Event Pages** (Markdown files like `5K.md`, `Haunted House.md`):
-	- Update the YAML frontmatter with page-specific metadata
-	- Modify event descriptions and details
-	- Set `include_countdown: true` if the event needs a countdown timer
+### Key includes
 
-2. **Centralized Configuration** (`_data/events.yml`):
-	- Update event name, date, slug, description, and countdown date
-	- Modify contact information and social media links
-	- Add or remove events from the events array
+| Include | Purpose |
+|---------|---------|
+| `nav.html` | Main nav from `_data/events.yml` |
+| `footer.html` | Site footer (nav links, address, contact, social) |
+| `contact-links.html` | Phone and email with emoji icons |
+| `social-links.html` | Instagram/social links from `_data/events.yml` |
+| `countdown-section.html` | Countdown UI when `countdown_datetime` is set |
+| `event-schema.html` | JSON-LD Event structured data |
+| `image-gallery.html` | Poster grids for sponsors and previous events |
+| `event-icon.html` | Event emoji from page frontmatter (nav, homepage) |
+| `upcoming-events.html` | Homepage event links |
 
-### Update Countdown Date
+### Layouts
 
-In your event page's YAML frontmatter, update the countdown date:
+| Layout | Extends | Purpose |
+|--------|---------|---------|
+| `default` | — | HTML shell (head, nav, footer) |
+| `page` | `default` | Standard page: emoji + title heading, SEO metadata, optional hero image |
+| `event` | `page` | Event sections: countdown, registration, sponsors, previous events |
+
+Shared front matter for any page: `emoji`, `title`, `description`, `keywords`, `og_*`, `data_page`. Optional: `heading` (longer h1), `hero_image`, `hero_alt`.
+
+**URL convention:** hyphenated slugs, no spaces — e.g. `/About-Us/`, `/Contact-Us/`, `/Legal/Privacy-Policy/`, `/Events/Haunted-House/`. Set `permalink` in front matter; old spaced URLs redirect automatically.
+
+## Adding or updating an event
+
+1. Copy [`Events/Event Template.md`](Events/Event%20Template.md) to a new file in `Events/`.
+2. Set shared page fields (`emoji`, `title`, `permalink`, `og_image`, etc.) plus event fields (`registration`, `previous_events`, etc.).
+3. Add the event to `_data/events.yml` under `events:` (`name`, `page`) for nav order and homepage links.
+4. Write event details in the markdown body (rendered inside `#details`).
+
+For a non-event page, copy [`Page Template.md`](Page%20Template.md) instead.
+
+### Countdown and event dates
+
+Set **`event_datetime`** on an event page when the date is announced. This drives the countdown, JSON-LD `startDate`, and the homepage date line when the event is featured.
+
 ```yaml
----
-layout: default
-title: "🎃 Haunted House"
-include_countdown: true
----
+# event_datetime: "2026-10-31T19:00:00-04:00"
+# countdown_label: "October 31, 2026 at 7:00 PM"
 ```
 
-The actual countdown date is calculated by `Countdown.js` based on the duration defined in `config.js`:
-```javascript
-// config.js
-countdown: {
-  colorScaleWindowMs: 30 * 24 * 60 * 60 * 1000, // 30 days
-  startColor: { r: 34, g: 197, b: 94 },    // Green
-  endColor: { r: 239, g: 68, b: 68 }        // Red
-}
-```
+`countdown_datetime` still works as a legacy alias. Leave the datetime unset until the date is confirmed — no countdown UI or timer script loads.
 
-### Add Event Poster Image
+### Homepage featured event
 
-1. Create a folder in `Assets/` for your event
-2. Add poster images: `2025 EventName.png`, `2024 EventName.png`, etc.
-3. Update the `<img>` tags in the event's HTML file with proper alt text:
-	```html
-	<img src="/Assets/5K/2025 5K.png" alt="2025 5K Event Poster" loading="lazy">
-	```
+In `_data/events.yml`, set `next_event` to an event page's `data_page` value (e.g. `"5k"`) to highlight one event on the homepage. Leave it empty (`""`) to list all events.
 
-### Add a New Event
+### Contact info
 
-1. **Create from template:**
-   Copy [Event Template.md](Event%20Template.md) and rename it (e.g., `New Event.md`)
+Update phone, email, and address once in `_data/events.yml` under `contact:`. Footer and Contact Us page read from there.
 
-2. **Add YAML frontmatter:**
-   ```yaml
-   ---
-   layout: default
-   title: "emoji Event Name"
-   description: "Short description"
-   og_image: "/Assets/EventFolder/2025 EventName.png"
-   data_page: "event-slug"
-   include_countdown: true
-   ---
-   ```
+## SEO: sitemap and robots
 
-3. **Update _data/events.yml:**
-	```yaml
-	events:
-	  - name: "Event Name"
-		 slug: "event-slug"
-		 emoji: "🎉"
-		 page: "/Event Name"
-		 description: "Event description"
-		 countdown_date: "2025-XX-XXT00:00:00Z"
-	```
+- **`sitemap.xml`** — auto-generated on every build by the `jekyll-sitemap` plugin.
+- **`robots.txt`** — generated from [`robots.txt`](robots.txt) (Jekyll page with Liquid front matter).
+- **404** and **Events/Event Template** are excluded from the sitemap (`sitemap: false`).
+- Old root and spaced URLs redirect to hyphenated paths via `jekyll-redirect-from` (e.g. `/About Us.html` → `/About-Us/`).
 
-4. **Add to navigation:**
-	Update `_includes/nav.html` to include your event link
+Always build with `JEKYLL_ENV=production` (or `bundle exec jekyll serve` only after setting that env var) so sitemap, robots, Open Graph, and canonical URLs use `https://foundationevent.com` from `_config.yml`. In development mode Jekyll defaults to `http://localhost:4000`.
 
-5. **Create Assets folder:**
-	Create `Assets/EventFolder/` and add your event's images
+## Security notes
 
-## 🎨 Customization
+- GitHub Pages does not support custom HTTP security headers (CSP, HSTS) natively. Options include a reverse proxy (e.g. Cloudflare) or accepting GH Pages defaults for this static brochure site.
+- External links use `rel="noopener noreferrer"` where appropriate.
+- Responsible disclosure: [/.well-known/security.txt](security.txt)
+- Dependabot monitors `Gemfile` and GitHub Actions weekly.
 
-### CSS Variables
+## CI workflows
 
-Edit `general.css` to customize colors, fonts, and spacing using CSS custom properties:
-```css
-:root {
-  --color-primary: #222222;
-  --color-secondary: #666666;
-  --color-accent: #dc2626;
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --spacing-unit: 1rem;
-}
-```
+| Workflow | Purpose |
+|----------|---------|
+| `validate.yml` | Jekyll build → HTML5 validation on `_site/` |
+| `link-check.yml` | Markdown + lychee link check on built HTML |
+| `lint-format.yml` | Super-Linter |
+| `lighthouse.yml` | Lighthouse performance/a11y/SEO |
 
-### JavaScript Configuration
+## `_data/events.yml`
 
-Modify `config.js` to adjust countdown colors, timing, and behavior:
-```javascript
-const CONFIG = {
-  fallbackImage: "/Assets/Foundation/Foundation Image Not Found.svg",
-  countdown: {
-	 colorScaleWindowMs: 30 * 24 * 60 * 60 * 1000,
-	 startColor: { r: 34, g: 197, b: 94 },
-	 endColor: { r: 239, g: 68, b: 68 }
-  },
-  nav: {
-	 activeClass: "current-page"
-  }
-};
-```
+| Section | Used for |
+|---------|----------|
+| `events` | Nav order and homepage links (`name`, `page`); emoji from each event page |
+| `next_event` | Optional `data_page` slug to feature one event on the homepage |
+| `contact` | Footer, Contact Us, JSON-LD organizer |
+| `social` | Footer and Contact Us social links (`icon`, `name`, `url`) |
 
-## 🔍 SEO & Accessibility
+Event details and dates live in each `Events/*.md` file. Add poster images under [`Assets/`](Assets/README.md) when available.
 
-- **JSON-LD Schema:** Event pages include structured data for search engines
-- **robots.txt:** Search engine crawling rules
-- **sitemap.xml:** Auto-generated site map
-- **ARIA Labels:** Countdown timer and dynamic content have proper accessibility labels
-- **Alt Text:** All images have descriptive alt text
-- **Prefers Reduced Motion:** Respects user motion preferences
+## License
 
-## 🚦 GitHub Actions CI/CD
-
-The repository includes automated workflows:
-
-1. **HTML Validation** (`.github/workflows/validate.yml`)
-	- Validates all HTML5 files on push/PR
-	- Runs on: `main` branch changes
-
-2. **Link Checking** (`.github/workflows/link-check.yml`)
-	- Checks for broken links
-	- Runs weekly and on every push/PR
-
-3. **Lighthouse CI** (`.github/workflows/lighthouse.yml`)
-	- Measures performance, accessibility, and SEO
-	- Generates detailed reports on pull requests
-
-## 📦 Deployment
-
-This site is deployed automatically via **GitHub Pages**:
-- Push to `main` branch triggers automatic Jekyll build
-- GitHub Pages serves the generated `_site/` directory
-- CNAME file points to foundationevent.com
-
-No manual build steps are required—Jekyll runs automatically on GitHub's servers.
-
-## 🛠️ Technologies
-
-- **Jekyll:** Static site generator with templating
-- **Vanilla HTML5/CSS3/JavaScript:** No frameworks or build tools needed
-- **YAML:** Configuration and data management
-- **GitHub Actions:** Automated testing and deployment
-- **GitHub Pages:** Free web hosting with Jekyll integration
-
-## 📝 License
-
-This project is open source. See [LICENSE](LICENSE) for details.
-
-## 📧 Support
-
-For questions or issues, please open a GitHub issue or contact the maintainers.
-- Put the poster in the empty `<img>` tag
-- Forms for registration can be embedded on the proper page
-
-# Adding a new event
-- Use the [Event Template.html](<Event Template.html>) and copy it, and rename it to whatever the event will be.
-  - Edit the default details in the file.
-  - Name, Date, Time, Details, etc...
-- Create a new folder in the [Assets](Assets/) folder for the event's images.
+All rights reserved © Foundation.

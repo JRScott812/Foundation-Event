@@ -1,10 +1,10 @@
 <div class="header-inner">
 	<nav aria-label="Main navigation">
 		<ul>
-			<li><a href="/" title="Home">🪏 Home</a></li>
-			<li><a href="/Haunted%20House" title="Haunted House">🎃 Haunted House</a></li>
-			<li><a href="/Parade" title="Thanksgiving Parade">🦃 Thanksgiving Parade</a></li>
-			<li><a href="/5K" title="5K">🏃 Foundation 5K</a></li>
+			<li><a href="/" title="Home"><span aria-hidden="true">🪏</span> Home</a></li>
+			{% for event in site.data.events.events %}
+			<li><a href="{{ event.page | uri_escape }}" title="{{ event.name | escape }}">{% include event-icon.html page=event.page %}{{ event.name }}</a></li>
+			{% endfor %}
 		</ul>
 	</nav>
 </div>
