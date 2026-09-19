@@ -19,7 +19,7 @@ Visit `http://localhost:4000`. Use `--url https://foundationevent.com` so sitema
 
 ## Site structure
 
-```
+```text
 ├── _config.yml           # Jekyll config, plugins, page defaults
 ├── _data/events.yml      # Nav events + contact/social info
 ├── _includes/            # Reusable HTML partials

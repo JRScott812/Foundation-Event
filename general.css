@@ -2,10 +2,10 @@
 
 :root {
 	/* Color Palette */
-	--color-bg: #ffffff;
-	--color-text: #333333;
-	--color-text-light: #666666;
-	--color-border: #dddddd;
+	--color-bg: #fff;
+	--color-text: #333;
+	--color-text-light: #666;
+	--color-border: #ddd;
 	--color-shadow: rgba(0, 0, 0, 0.1);
 	--color-shadow-light: rgba(0, 0, 0, 0.08);
 	--color-brand: #2c5aa0;
@@ -15,8 +15,8 @@
 	--color-status-tbd: #d32f2f;
 
 	/* Typography */
-	--font-body: Arial, sans-serif;
-	--font-heading: 'Arial Black', Gadget, sans-serif;
+	--font-body: arial, sans-serif;
+	--font-heading: 'Arial Black', gadget, sans-serif;
 	--font-size-base: 1rem;
 	--line-height-body: 1.6;
 	--line-height-heading: 1.2;
@@ -106,7 +106,7 @@ p {
 	color: var(--color-text);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
 	h1 {
 		font-size: 2rem;
 	}
@@ -124,7 +124,7 @@ p {
 	}
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
 	h1 {
 		font-size: 3rem;
 	}
@@ -242,7 +242,7 @@ img {
 }
 
 /* Media queries for responsive design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
 	:root {
 		--spacing-md: 15px;
 		--spacing-lg: 20px;
@@ -279,7 +279,7 @@ img {
 	}
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
 	:root {
 		--spacing-sm: 8px;
 		--spacing-md: 10px;
@@ -390,7 +390,7 @@ img {
 }
 
 /* Grid layout for larger screens */
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
 	.image-row {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -413,7 +413,7 @@ img {
 	}
 }
 
-@media (min-width: 1600px) {
+@media (width >= 1600px) {
 	.image-row {
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	}
@@ -479,21 +479,21 @@ img {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
 	.map-embed iframe {
 		max-width: min(100%, 980px);
 		height: clamp(460px, 38vw, 560px);
 	}
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
 	.map-embed iframe {
 		height: 400px;
 		border-radius: 6px;
 	}
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
 	.map-embed iframe {
 		height: 350px;
 		border-radius: 4px;
@@ -531,12 +531,12 @@ a:focus-visible {
 
 .btn-primary {
 	background: linear-gradient(135deg, var(--color-brand), var(--color-brand-dark));
-	color: #ffffff;
+	color: #fff;
 	box-shadow: 0 2px 8px rgba(44, 90, 160, 0.3);
 }
 
 .btn-primary:hover {
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none;
 	transform: translateY(-2px);
 	box-shadow: 0 4px 12px rgba(44, 90, 160, 0.4);
