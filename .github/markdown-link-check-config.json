@@ -7,10 +7,14 @@
 	  "pattern": "^http://localhost"
 	}
   ],
-  "replacementPatterns": [
+	  "replacementPatterns": [
 	{
 	  "pattern": "^/",
-	  "replacement": "https://foundationevent.com/"
+	  "replacement": "https://foundationevent.com"
 	}
-  ]
+	],
+	  "check-anchors": true,
+	  "timeout": "10s",
+	  "retryOn429": true,
+	  "aliveStatusCodes": [200, 206, 429]
 }

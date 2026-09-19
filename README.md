@@ -9,6 +9,12 @@ bundle install
 $env:JEKYLL_ENV="production"; bundle exec jekyll serve
 ```
 
+On Linux or macOS, set the environment variable inline:
+
+```bash
+JEKYLL_ENV=production bundle exec jekyll serve
+```
+
 Visit `http://localhost:4000`. Use `--url https://foundationevent.com` so sitemap, robots, Open Graph, and canonical URLs match production.
 
 ## Site structure
