@@ -4,7 +4,7 @@ Static images for the site. Missing files fall back to `Assets/Foundation/Founda
 
 ## Layout
 
-```
+```text
 Assets/
 ├── Foundation/          # Site logos and fallback image (in repo)
 ├── 5K/                  # 5K posters and sponsor logos

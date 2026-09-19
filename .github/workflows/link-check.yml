@@ -1,6 +1,9 @@
 ---
 name: Link Check
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
@@ -31,9 +34,11 @@ jobs:
           use-quiet-mode: yes
           use-verbose-mode: yes
           config-file: '.github/markdown-link-check-config.json'
+          # Avoid recursing into vendor/bundle gem READMEs installed by bundler-cache
+          max-depth: 1
 
       - name: Validate built HTML links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --base https://foundationevent.com --verbose --no-progress '_site/**/*.html'
+          args: --root-dir _site --verbose --no-progress '_site/**/*.html'
           fail: true

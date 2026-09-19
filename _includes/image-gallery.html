@@ -2,7 +2,11 @@
 	{% for item in include.items %}
 	<figure class="image-container">
 		<figcaption>{{ item.year | default: item.caption }}</figcaption>
+		{% if forloop.first %}
+		<img src="{{ item.src | uri_escape }}" alt="{{ item.alt | escape }}" fetchpriority="high">
+		{% else %}
 		<img src="{{ item.src | uri_escape }}" alt="{{ item.alt | escape }}" loading="lazy">
+		{% endif %}
 	</figure>
 	{% endfor %}
 </div>

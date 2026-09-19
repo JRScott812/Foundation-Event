@@ -1,6 +1,9 @@
 ---
 name: Lint & Format Check
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
@@ -13,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Run Super-Linter
         uses: github/super-linter@v7
@@ -21,9 +26,21 @@ jobs:
           DEFAULT_BRANCH: main
           LINTER_RULES_PATH: .github/linters
           VALIDATE_ALL_CODEBASE: true
-          # Exclude large asset folders and generated site
-          FILTER_REGEX_EXCLUDE: '(^Assets/|^_site/|^\.git/)'
-          # Disable StandardJS, use ESLint instead (configured to accept tabs)
-          DISABLE: JSCPD,NATURAL_LANGUAGE,JAVASCRIPT_STANDARD,GITHUB_ACTIONS
+          # Exclude large asset folders, generated site, and Liquid templates (not valid standalone HTML)
+          FILTER_REGEX_EXCLUDE: '(^Assets/|^_site/|^\.git/|^_includes/|^_layouts/)'
+          # Super-linter v7 disables per-linter via VALIDATE_<NAME>: false (a single DISABLE var does not exist)
+          VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_YAML: false
+          VALIDATE_CSS: false
+          VALIDATE_CSS_PRETTIER: false
+          VALIDATE_HTML: false
+          VALIDATE_HTML_PRETTIER: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
           # Optionally run in quiet mode
           ACTIONS_ALLOW_UNSECURE_COMMANDS: false

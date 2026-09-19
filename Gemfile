@@ -7,3 +7,4 @@ gem "jekyll-redirect-from"
 gem "csv"
 gem "base64"
 gem "bigdecimal"
+gem "html-proofer", group: :test
