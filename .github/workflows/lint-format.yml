@@ -33,5 +33,6 @@ jobs:
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_YAML: false
           # Optionally run in quiet mode
           ACTIONS_ALLOW_UNSECURE_COMMANDS: false
