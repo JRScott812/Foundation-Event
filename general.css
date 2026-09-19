@@ -154,6 +154,8 @@ img {
 	min-width: 300px;
 	width: 100%;
 	height: auto;
+	aspect-ratio: 3 / 4;
+	object-fit: contain;
 	border-radius: var(--border-radius);
 	box-shadow: 0 4px 8px var(--color-shadow);
 }
@@ -201,6 +203,8 @@ img {
 .image-container img {
 	width: 100%;
 	height: auto;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
 	border-radius: 15px;
 	border: 2px solid var(--color-text);
 	box-shadow: 0 4px 8px var(--color-shadow);
@@ -213,7 +217,7 @@ img {
 
 .image-container figcaption,
 .image-container label {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--color-text);
 	color: white;
 	padding: 5px 10px;
 	border-radius: var(--border-radius-sm);
@@ -500,7 +504,8 @@ img {
 /* Link styling */
 a {
 	color: var(--color-brand);
-	text-decoration: none;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
 	transition: color 0.3s ease;
 }
 

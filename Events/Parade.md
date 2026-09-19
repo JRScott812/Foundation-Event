@@ -15,7 +15,7 @@ og_description: "Parade through the Southside of Samuel Morris Hall. With variou
 og_image: "/Assets/Parade/2025 Parade.jpg"
 data_page: "parade"
 registration: |
-  ### Register your act with the parade's leaders.
+  ## Register your act with the parade's leaders.
 previous_events_title: "Previous Parades:"
 previous_events:
   - year: "2025"

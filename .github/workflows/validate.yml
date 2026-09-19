@@ -27,7 +27,7 @@ on:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
 
@@ -48,7 +48,5 @@ jobs:
           grep -q 'sitemap.xml' _site/robots.txt
 
       - name: Validate HTML
-        uses: Cyb3r-Jak3/html5-validator-action@v1.4.0
-        with:
-          root: _site
-          extra: --ignore="Duplicate ID|Bad value|Duplicate name"
+        run: |
+          bundle exec htmlproofer _site --disable-external

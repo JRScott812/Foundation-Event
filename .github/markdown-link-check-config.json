@@ -10,7 +10,7 @@
 	  "replacementPatterns": [
 	{
 	  "pattern": "^/",
-	  "replacement": "https://foundationevent.com"
+	  "replacement": "https://foundationevent.com/"
 	}
 	],
 	  "check-anchors": true,
