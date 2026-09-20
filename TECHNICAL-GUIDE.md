@@ -141,10 +141,21 @@ Run these commands from the repository root:
 | `npm run lint` | JavaScript, CSS, and Markdown style rules |
 | `npm run link-check` | Markdown links and links in the generated site |
 | `npm run validate` | Production build plus local HTML validation |
-| `npm run lighthouse` | Lighthouse performance, accessibility, SEO, and best-practice checks |
+| `npm run lighthouse` | Full local Lighthouse audit: Navigation + Snapshot mode, Mobile + Desktop, all categories |
+| `npm run lighthouse:ci` | Exact reproduction of the `lighthouse.yml` CI check (single Navigation/mobile pass, 3 runs averaged) |
 | `npm run build` | Production Jekyll build only |
 
-`link-check`, `validate`, and `lighthouse` build the site before running their respective checks. Run the smallest applicable command while developing, then run the appropriate full check before opening a pull request.
+`link-check`, `validate`, and `lighthouse*` build the site before running their respective checks. Run the smallest applicable command while developing, then run the appropriate full check before opening a pull request.
+
+### About the two Lighthouse commands
+
+- **`npm run lighthouse:ci`** calls `@lhci/cli` with `.github/lighthouserc.json` -- the same config CI uses. That config sets `numberOfRuns: 3`, which means each URL is audited **three times and the median result is reported**, purely to reduce run-to-run flakiness in performance metrics. It is a repeat of one configuration (Navigation mode, mobile emulation), not three different modes or devices.
+- **`npm run lighthouse`** runs `scripts/lighthouse-report.mjs`, a small script built on Lighthouse's "User Flow" API (`@lhci/cli` cannot do this -- it only supports a single Navigation-mode pass per config). For every URL in `.github/lighthouserc.json`, it audits:
+  - **Navigation mode** (a full page load) and **Snapshot mode** (a point-in-time DOM snapshot), matching the "Mode" selector in the Chrome DevTools Lighthouse panel.
+  - Both **Mobile** and **Desktop** device emulation.
+  - All default categories: Performance, Accessibility, Best Practices, and SEO (the `pwa` category was removed in Lighthouse 12+; the DevTools panel's "Agentic browsing" checkbox is a DevTools-only experimental feature not exposed through Lighthouse's public API, so it is not included here).
+
+  It writes one combined HTML report per page per device (containing both the Navigation and Snapshot steps) to `.lighthouse-reports/` (git-ignored) and prints a score summary table to the console. Performance metrics such as LCP/CLS/TBT are not applicable during the Snapshot step -- that mirrors Chrome DevTools' own behavior, since Snapshot mode does not capture page-load timing.
 
 On PowerShell, set a nonstandard Chrome location for the current terminal with:
 
