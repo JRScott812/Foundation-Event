@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /Legal/Privacy-Policy/
+permalink: /legal/privacy-policy/
 redirect_from:
   - "/Privacy Policy.html"
   - "/Privacy Policy/"
@@ -12,8 +12,6 @@ redirect_from:
   - "/Legal/Privacy Policy"
   - /Legal/Privacy%20Policy/
   - /Legal/Privacy%20Policy
-  - /legal/privacy-policy/
-  - /legal/privacy-policy
 emoji: "🔒"
 title: "Privacy Policy"
 description: "Privacy Policy about data collected."

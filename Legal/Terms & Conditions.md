@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /Legal/Terms-and-Conditions/
+permalink: /legal/terms-and-conditions/
 redirect_from:
   - "/Terms & Conditions.html"
   - "/Terms & Conditions/"
@@ -12,8 +12,6 @@ redirect_from:
   - "/Legal/Terms & Conditions"
   - /Legal/Terms%20%26%20Conditions/
   - /Legal/Terms%20%26%20Conditions
-  - /legal/terms-and-conditions/
-  - /legal/terms-and-conditions
 emoji: "📃"
 title: "Terms & Conditions"
 description: "Terms & Conditions for using Foundation Events website."
