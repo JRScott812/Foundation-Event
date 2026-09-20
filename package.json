@@ -1,0 +1,29 @@
+{
+  "name": "foundation-event",
+  "private": true,
+  "scripts": {
+    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build",
+    "lint": "npm run lint:javascript && npm run lint:css && npm run lint:markdown",
+    "lint:javascript": "eslint --config .github/linters/.eslintrc.json config.js Helper.js Countdown.js",
+    "lint:css": "stylelint --config .github/linters/.stylelintrc.json general.css nav.css",
+    "lint:markdown": "markdownlint-cli2 --config .github/linters/.markdownlint.json \"**/*.md\" \"#_site/**\" \"#.jekyll-cache/**\" \"#node_modules/**\"",
+    "link-check": "npm run build && npm run link-check:markdown && npm run link-check:site",
+    "link-check:markdown": "node scripts/check-markdown-links.mjs",
+    "link-check:site": "node scripts/check-links.mjs",
+    "validate": "npm run build && bundle exec htmlproofer _site --disable-external",
+    "lighthouse": "npm run build && node scripts/lighthouse-report.mjs",
+    "lighthouse:ci": "npm run build && lhci autorun --config=./.github/lighthouserc.json"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.15.1",
+    "chrome-launcher": "0.13.4",
+    "cross-env": "10.0.0",
+    "eslint": "8.57.1",
+    "lighthouse": "12.6.1",
+    "markdown-link-check": "3.15.0",
+    "markdownlint-cli2": "0.23.3",
+    "puppeteer-core": "24.43.1",
+    "stylelint": "15.11.0",
+    "stylelint-config-standard": "34.0.0"
+  }
+}
