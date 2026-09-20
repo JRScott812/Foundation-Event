@@ -2,6 +2,25 @@
 
 Static site for Foundation Events at Samuel Morris Hall (Taylor University), built with [Jekyll 4.4](https://jekyllrb.com/) and deployed to GitHub Pages at [foundationevent.com](https://foundationevent.com).
 
+## Guides
+
+Choose the guide that matches the person making the change:
+
+- **[Non-Technical Content Guide](NONTECHNICAL-GUIDE.md)** — GitHub browser editing for event details, dates, registration, posters, contact information, and safe publishing.
+- **[Technical Guide](TECHNICAL-GUIDE.md)** — local development, architecture, configuration, templates, JavaScript, validation, CI, deployment, and troubleshooting.
+
+Routine editors using the non-technical guide normally only need these locations:
+
+| Need to change | Edit this |
+|---|---|
+| Event wording, dates, registration, or old posters | A file in `Events/` |
+| Event navigation or homepage order | `_data/events.yml` |
+| Organization address, phone, email, or social profile | `_data/events.yml` |
+| Add a poster or logo | The matching folder under `Assets/` |
+| About, contact, privacy, or terms wording | The corresponding Markdown file |
+
+Do not edit `_includes/`, `_layouts/`, `*.js`, `*.css`, `.github/`, `Gemfile`, or `_config.yml` for routine content changes. Those files control the site design, behavior, deployment, and checks.
+
 ## Local development
 
 ```bash
@@ -59,7 +78,7 @@ Visit `http://localhost:4000`. Use `--url https://foundationevent.com` so sitema
 
 Shared front matter for any page: `emoji`, `title`, `description`, `keywords`, `og_*`, `data_page`. Optional: `heading` (longer h1), `hero_image`, `hero_alt`.
 
-**URL convention:** hyphenated slugs, no spaces — e.g. `/About-Us/`, `/Contact-Us/`, `/Legal/Privacy-Policy/`, `/Events/Haunted-House/`. Set `permalink` in front matter; old spaced URLs redirect automatically.
+**URL convention:** lowercase, hyphenated slugs with no spaces — e.g. `/About-Us/`, `/Contact-Us/`, `/legal/privacy-policy/`, `/Events/Haunted-House/`. Set `permalink` in front matter; old spaced URLs redirect automatically.
 
 ## Adding or updating an event
 
