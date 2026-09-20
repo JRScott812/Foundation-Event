@@ -30,8 +30,9 @@ nav {
 /* List layout */
 nav ul {
 	display: flex;
-	flex-wrap: wrap;
+
 	/* allow wrapping on narrow screens */
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
@@ -58,8 +59,9 @@ nav a {
 	padding: 0.5rem 0.9rem;
 	border-radius: 8px;
 	border: 1px solid transparent;
-	min-height: 44px;
+
 	/* touch target */
+	min-height: 44px;
 	transition: transform 150ms var(--transition-ease), box-shadow 150ms var(--transition-ease), background-color 150ms var(--transition-ease), border-color 150ms var(--transition-ease);
 }
 
@@ -133,8 +135,7 @@ nav a.current-page::after {
 	}
 
 	nav ul {
-		flex-direction: row;
-		flex-wrap: wrap;
+		flex-flow: row wrap;
 		align-items: center;
 		justify-content: center;
 		gap: 0.25rem;
@@ -179,7 +180,6 @@ nav a.current-page::after {
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-
 	nav a,
 	nav a:hover,
 	nav a:active {
@@ -193,6 +193,7 @@ nav a.current-page::after {
 	--footer-text: rgba(255, 255, 255, 0.9);
 	--footer-link: #fff;
 	--footer-muted: rgba(255, 255, 255, 0.82);
+
 	background: linear-gradient(180deg, rgba(20, 24, 30, 0.98), rgba(14, 18, 24, 0.98));
 	color: var(--nav-foreground);
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -267,7 +268,7 @@ nav a.current-page::after {
 .site-footer .footer-contact a:hover,
 .site-footer .footer-contact a:focus-visible {
 	color: var(--footer-link);
-	text-decoration-color: currentColor;
+	text-decoration-color: currentcolor;
 	outline: none;
 }
 
