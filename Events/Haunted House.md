@@ -17,6 +17,8 @@ og_title: "Haunted House"
 og_description: "A themed Haunted House in the basement of Samuel Morris Hall."
 og_image: "/Assets/Haunted House/2025 Haunted House.jpg"
 data_page: "haunted-house"
+event_datetime: "2026-10-30T19:00:00-04:00"
+countdown_label: "Friday October 30th, 7-11PM"
 registration: |
   ## Register in Samuel Morris lobby.
 previous_events_title: "Previous Haunted Houses:"

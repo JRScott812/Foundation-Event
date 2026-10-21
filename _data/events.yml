@@ -10,7 +10,7 @@ events:
 
 # Set to an event page's data_page value to feature one event on the homepage (e.g. "5k").
 # Leave empty to list all events.
-next_event: ""
+next_event: "haunted-house"
 
 contact:
   organization: "Foundation"
