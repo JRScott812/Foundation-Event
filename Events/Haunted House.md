@@ -15,7 +15,9 @@ description: "A themed Haunted House in the basement of Samuel Morris Hall."
 keywords: "Foundation Event, Haunted House, Event Details"
 og_title: "Haunted House"
 og_description: "A themed Haunted House in the basement of Samuel Morris Hall."
-og_image: "/Assets/Haunted House/2025 Haunted House.jpg"
+og_image: "/Assets/Haunted House/2026 Haunted House.jpg"
+event_poster: "/Assets/Haunted House/2026 Haunted House.jpg"
+event_poster_alt: "2026 Foundation Haunted House event poster"
 data_page: "haunted-house"
 event_datetime: "2026-10-30T19:00:00-04:00"
 countdown_label: "Friday October 30th, 7-11PM"
@@ -43,4 +45,4 @@ previous_events:
     alt: "2020 Haunted House Event Poster"
 ---
 
-A themed Haunted House in the basement of Samuel Morris Hall.
+A _Stranger Things_-themed Haunted House in the basement of Samuel Morris Hall.

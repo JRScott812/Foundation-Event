@@ -175,6 +175,19 @@ img {
 	margin: var(--spacing-lg) 0;
 }
 
+.event-poster-content {
+	flex-direction: column;
+}
+
+.event-poster-content .main-text {
+	width: 100%;
+	text-align: center;
+}
+
+.event-poster-content .main-image {
+	border-radius: 16px;
+}
+
 .main-text {
 	flex: 1;
 	max-width: 600px;
